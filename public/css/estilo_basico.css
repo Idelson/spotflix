@@ -1,0 +1,27 @@
+html, body{
+    background-color: white;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+.menu{
+    display: inline-block;
+}
+h1{
+    color: black;
+}
+
+.div_formulario{
+    width: 30%;
+    border: 2px solid black;
+    border-radius: 15px;
+    text-align: center;
+    margin: auto;
+}
+.img_primaria{
+    width:50%;
+    border-radius:15px;
+    margin:auto;
+    
+}
