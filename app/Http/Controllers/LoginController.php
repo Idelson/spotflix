@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
-
+use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller
 {
@@ -40,11 +40,11 @@ class LoginController extends Controller
         $email = $request->get('usuario');
         $password = $request->get('senha');
         
-
+        
         $user = new User();
-        $usuario = $user->where('email', $email)->where('password', $password)->get()->first();
-       
-        if(isset($usuario->name)){ // se o nome do usuário estiver definido
+        $usuario = $user->where('email', $email)->get()->first();
+        
+        if(Hash::check($password, $usuario->password)){
             session_start();
             $_SESSION['name'] = $usuario->name;
             $_SESSION['email'] = $usuario->email;

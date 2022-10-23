@@ -12,7 +12,7 @@
             @csrf
             <input name='usuario' value='{{ old('usuario') }}' type='text' placeholder='Usuário' class='input_form_login'><br>
             {{ $errors->has('usuario') ? $errors->first('usuario') : '' }}<br>
-            <input name='senha' value='{{ old('senha') }}' type='password' placeholder='Senha' class='input_form_login'><br>
+            <input name='senha' value='{{-- old('senha') --}}' type='password' placeholder='Senha' class='input_form_login'><br>
             {{ $errors->has('senha') ? $errors->first('senha') : '' }}<br>
             <button type='submit' class='bot'>Acessar</button>
         </form><br>
