@@ -45,8 +45,9 @@ class LoginController extends Controller
         //armazena na variável os atributos do usuário que o email é igual ao do digitado no formulário
         $usuario = $user->where('email', $email)->get()->first();
         
+
         //testa se a senha digitada no formulário é compatível com a do banco de dados.
-        if(Hash::check($password, $usuario->password)){
+        if($usuario != "" && Hash::check($password, $usuario->password)){
             //starta a sessão
             session_start();
 

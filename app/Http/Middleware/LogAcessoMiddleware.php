@@ -28,7 +28,7 @@ class LogAcessoMiddleware
 
         //retorna a requisição e envia para a aplicação ou para middleware de autenticação, conforme o caso
         return $next($request);
-        
+       
 
     }
 }
