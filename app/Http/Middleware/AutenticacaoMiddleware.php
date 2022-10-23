@@ -16,10 +16,14 @@ class AutenticacaoMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        session_start();    
+        //starta a sessao
+        session_start();
+        //verifica se a global nome foi definida e se email é diferente de nulo. 
         if(isset($_SESSION['name']) && $_SESSION['email'] != ''){
+            //empurra a requisição para a aplicação
             return $next($request);
         }else{
+            //redireciona para o site login e envia o erro 2 como parâmetro
             return redirect()->route('site.login',['erro'=> 2]);
         }
     }

@@ -17,11 +17,18 @@ class LogAcessoMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
+        //retorna o ip do request e guarda na variável
         $ip = $request->server->get('REMOTE_ADDR');
+
+        //armazena na variável a URI acessada
         $rota = $request->getRequestUri();
+
+        //grava no banco de dados
         LogAcesso::create(['log'=>"IP $ip requisitou a rota $rota."]);
+
+        //retorna a requisição e envia para a aplicação ou para middleware de autenticação, conforme o caso
         return $next($request);
-        $resposta = $next($request);
+        
 
     }
 }
