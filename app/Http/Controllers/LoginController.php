@@ -33,7 +33,7 @@ class LoginController extends Controller
             'senha.required' => 'O campo senha é obrigatório!'
         ];
 
-        //executa a validação com as regras e mensagem propostas
+        //aplica a validação com as regras e mensagem propostas
         $request->validate($regras, $feedback);
 
         //recupera os parâmetros do formulário
