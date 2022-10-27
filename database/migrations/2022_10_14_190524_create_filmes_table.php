@@ -25,7 +25,7 @@ return new class extends Migration
             $table->softDeletes();
 
             $table->foreign('classificacoe_id')->references('id')->on('classificacoes');
-            $table->unique('classificacoe_id');
+            
         });
 
         Schema::create('filme_plataformas', function(Blueprint $table){

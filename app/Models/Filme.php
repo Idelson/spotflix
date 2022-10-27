@@ -11,5 +11,5 @@ class Filme extends Model
     use HasFactory;
     use SoftDeletes;
 
-    protected $fillable = [];
+    protected $fillable = ['titulo', 'ano', 'duracao', 'avaliacao', 'imagem', 'classificacoe_id'];
 }
