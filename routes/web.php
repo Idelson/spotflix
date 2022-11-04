@@ -5,6 +5,7 @@ use App\Http\Controllers\PrincipalController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CriaListaController;
+use App\Http\Controllers\FilmeController;
 use App\Http\Controllers\MeuPerfilController;
 use App\Http\Controllers\FilmeListaController;
 use App\Http\Controllers\MinhaListaController;
@@ -42,4 +43,6 @@ Route::middleware('autenticacao')->prefix('/app')->group(function(){
     Route::get('/crialista', [CriaListaController::class, 'index'])->name('app.crialista');
     Route::get('/minhalista', [MinhaListaController::class, 'index'])->name('app.minhalista');
     Route::get('/filmelista', [FilmeListaController::class, 'index'])->name('app.filmelista');
+
+    Route::resource('filme', FilmeController::class);
 });

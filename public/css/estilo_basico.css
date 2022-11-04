@@ -11,7 +11,6 @@ a{
 h1{
     color: black;
 }
-
 .div_formulario{
     width: 30%;
     border: 2px solid black;
@@ -23,4 +22,17 @@ h1{
     width:50%;
     margin: auto;
     
+}
+#filme_todos{
+    border: 1px solid black;
+    width: 100%;
+}
+td{
+    border: 1px solid black;
+}
+.dados{
+    text-align: center;
+}
+#cadastro-filme{
+    width: 80%;
 }
