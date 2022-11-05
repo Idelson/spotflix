@@ -34,5 +34,16 @@ td{
     text-align: center;
 }
 #cadastro-filme{
-    width: 80%;
+    width: 100%;
+    /*border: 1px solid black;*/
+    text-align: center;
 }
+.forms{
+    width: 50%;
+    height: 20px;
+}
+.select{
+    width: 42%;
+    height: 20px;
+}
+

@@ -16,7 +16,7 @@ class FilmeController extends Controller
      */
     public function index()
     {
-        $filmes = Filme::orderBy('titulo')->paginate(10);
+        $filmes = Filme::orderBy('titulo')->paginate(20);
         return view('app.filme.index', ['titulo' => 'Lista de Filmes', 'filmes' => $filmes]);
     }
 
@@ -27,8 +27,7 @@ class FilmeController extends Controller
      */
     public function create()
     {
-        $classificacoes = new Classificacao();
-        //dd($classificacoes->get());
+        $classificacoes = Classificacao::all();
         return view('app.filme.create', ['titulo' => 'Cadastra Filme', 'classificacoes' => $classificacoes]);
     }
 
@@ -40,7 +39,8 @@ class FilmeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Filme::create($request->all());
+        return redirect()->route('filme.index');
     }
 
     /**

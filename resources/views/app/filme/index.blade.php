@@ -5,7 +5,7 @@
 @section('conteudo')
     
     <table id='filme_todos'>
-        
+        <a id='link-novo' href="{{ route('filme.create') }}">Novo Filme</a>
         <thead>
             <tr>
                 <th>Titulo</th>
@@ -14,7 +14,7 @@
                 <th>Imagem</th>
                 <th>Classificação</th>   
                 <th></th>
-                <th></th>             
+                <th></th>
             </tr>
         </thead>
 
@@ -27,7 +27,7 @@
                     <td class='dados'>{{ $filme->ano }}</td>
                     <td class='dados'>{{ $filme->duracao }}</td>
                     <td class='dados'>{{ $filme->imagem }}</td>
-                    <td class='dados'>{{ $filme->classificacoe_id }}</td>
+                    <td class='dados'>{{ $filme->classificacao->descricao }}</td>
                     <td class='dados'><a href="#">Excluir</a></td>
                     <td class='dados'><a href="#">Editar</a></td>
                 </tr>
