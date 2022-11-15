@@ -1,8 +1,30 @@
 @extends('app.layouts.basico')
 
-@section('titulo', $titulo)
+@section('titulo', 'Home')
 
 @section('conteudo')
-    <br><br><br><br>
-    <h1>Tela home do usuário</h1>
+    <table id='minhas-listas'>
+
+        <thead>
+
+            <tr>
+                <th>Imagem</th>
+                <th>Nome</th>
+            </tr>
+
+        </thead>
+        <tbody>
+
+            @foreach ($listas as $lista)
+
+                <tr>
+                    <td>{{ $lista->imagem }}</td>
+                    <td>{{ $lista->nome }}</td>
+                </tr>
+                
+            @endforeach
+            
+        </tbody>
+    
+    </table>
 @endsection

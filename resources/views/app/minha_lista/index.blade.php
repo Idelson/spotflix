@@ -15,11 +15,11 @@
         </thead>
         <tbody>
 
-            @foreach ($minhaListas as $minhaLista)
+            @foreach ($listas as $lista)
 
                 <tr>
-                    <td>{{ $minhaLista->imagem }}</td>
-                    <td>{{ $minhaLista->nome }}</td>
+                    <td>{{ $lista->imagem }}</td>
+                    <td>{{ $lista->nome }}</td>
                 </tr>
                 
             @endforeach

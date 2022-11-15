@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Lista;
 use Illuminate\Http\Request;
 
-class MinhaListaController extends Controller
+class ListaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,10 +14,7 @@ class MinhaListaController extends Controller
      */
     public function index()
     {
-        //cria o objeto com as listas somente do usuário logado
-        $listas = Lista::all()->where('user_id', $_SESSION['id']);
-        //retorna a view e passa o parâmetro retornado da model
-        return view('app.minha_lista.index', ['listas' => $listas]);
+        //
     }
 
     /**
@@ -27,7 +24,7 @@ class MinhaListaController extends Controller
      */
     public function create()
     {
-        return view('app.minha_lista.create');
+        //
     }
 
     /**
@@ -38,19 +35,13 @@ class MinhaListaController extends Controller
      */
     public function store(Request $request)
     {
-        
-        $minhaLista = new Lista();
-        $minhaLista->nome = $request->get('nome');
-        $minhaLista->imagem = $request->get('imagem');
-        $minhaLista->user_id = $_SESSION['id'];
-        $minhaLista->save();
-        return redirect()->route('minha-lista.index');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\MinhaLista  $minhaLista
+     * @param  \App\Models\Lista  $lista
      * @return \Illuminate\Http\Response
      */
     public function show(Lista $lista)
@@ -61,7 +52,7 @@ class MinhaListaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\MinhaLista  $minhaLista
+     * @param  \App\Models\Lista  $lista
      * @return \Illuminate\Http\Response
      */
     public function edit(Lista $lista)
@@ -73,7 +64,7 @@ class MinhaListaController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\MinhaLista  $minhaLista
+     * @param  \App\Models\Lista  $lista
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Lista $lista)
@@ -84,7 +75,7 @@ class MinhaListaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\MinhaLista  $minhaLista
+     * @param  \App\Models\Lista  $lista
      * @return \Illuminate\Http\Response
      */
     public function destroy(Lista $lista)
