@@ -56,6 +56,9 @@ class LoginController extends Controller
 
             //armazena email na global SESSION para manter a conecção entre as páginas da aplicação
             $_SESSION['email'] = $usuario->email;
+
+            //para criar lista com o id do usuário ativo
+            $_SESSION['id'] = $usuario->id;
             
             //redireciona para página home da aplicação
             return redirect()->route('app.home');

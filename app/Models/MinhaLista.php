@@ -5,7 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ListaFilme extends Model
+class MinhaLista extends Model
 {
     use HasFactory;
+    protected $fillable = ['nome', 'imagem', 'user_id'];
 }

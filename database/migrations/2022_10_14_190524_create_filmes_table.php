@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('titulo', 50);
             $table->integer('ano');
             $table->string('duracao', 10);
-            $table->integer('avaliacao');
             $table->string('imagem', 120);
             $table->unsignedBigInteger('classificacoe_id');
             $table->timestamps();
@@ -53,8 +52,10 @@ return new class extends Migration
      */
     public function down()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('filme_categorias');
         Schema::dropIfExists('filme_plataformas');
-        Schema::dropIfExists('filmes'); 
+        Schema::dropIfExists('filmes');
+        Schema::enableForeignKeyConstraints();
     }
 };

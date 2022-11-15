@@ -46,4 +46,7 @@ td{
     width: 42%;
     height: 20px;
 }
+#minhas-listas th{
+    border: 1px solid black;
+}
 
