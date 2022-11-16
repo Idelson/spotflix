@@ -1,0 +1,36 @@
+@extends('app.layouts.basico')
+
+@section('titulo', 'Minhas Listas')
+
+@section('conteudo')
+    <div class='listas'>
+        <h3>Minhas Listas</h3>
+        <table border='1' width='80%'>
+        
+            <thead>
+                <tr>
+                    <th>Imagem</th>
+                    <th>Nome</th>
+                    <th colspan='4'>Ações</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($listas as $lista)
+                    <tr>
+                        <td>{{ $lista->imagem }}</td>
+                        <td>{{ $lista->nome }}</td>
+                        <td><a href="">Visualizar</a></td>
+                        <td><a href="">Adicionar Filme</a></td>
+                        <td><a href="">Editar</a></td>
+                        <td><a href="">Excluir</a></td>
+                    </tr>
+        
+                @endforeach
+        
+            </tbody>
+        
+        </table>
+    </div>
+
+@endsection

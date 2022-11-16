@@ -14,7 +14,10 @@ class ListaController extends Controller
      */
     public function index()
     {
-        //
+        //cria o objeto com as listas somente do usuário logado
+        $listas = Lista::orderBy('nome')->paginate(10)->where('user_id', $_SESSION['id']);
+        //retorna a view e passa o parâmetro retornado da model
+        return view('app.lista.index', ['listas' => $listas]);
     }
 
     /**
@@ -24,7 +27,7 @@ class ListaController extends Controller
      */
     public function create()
     {
-        //
+        return view('app.lista.create');
     }
 
     /**
@@ -35,7 +38,12 @@ class ListaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $lista = new Lista();
+        $lista->nome = $request->get('nome');
+        $lista->imagem = $request->get('imagem');
+        $lista->user_id = $_SESSION['id'];
+        $lista->save();
+        return redirect()->route('lista.index');
     }
 
     /**

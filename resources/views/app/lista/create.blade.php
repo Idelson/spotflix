@@ -6,7 +6,7 @@
     
     <div id="cadastro-lista">
 
-        <form method="post" action="{{ route('minha-lista.store') }}">
+        <form method="post" action="{{ route('lista.store') }}">
             @csrf
             <input class="forms" name="nome" placeholder="Nome da Lista"><br><br>
             <input class="forms" name="imagem" placeholder="Selecione a imagem"><br><br>

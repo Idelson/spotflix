@@ -3,13 +3,14 @@
 @section('titulo', 'Home')
 
 @section('conteudo')
-    <table id='minhas-listas'>
+    <table border='1' width='100%'>
 
         <thead>
 
             <tr>
                 <th>Imagem</th>
                 <th>Nome</th>
+                <th>Ação</th>
             </tr>
 
         </thead>
@@ -20,6 +21,7 @@
                 <tr>
                     <td>{{ $lista->imagem }}</td>
                     <td>{{ $lista->nome }}</td>
+                    <td><a href="">Visualizar</a></td>
                 </tr>
                 
             @endforeach

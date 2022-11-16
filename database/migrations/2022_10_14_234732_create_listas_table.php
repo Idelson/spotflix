@@ -23,7 +23,7 @@ return new class extends Migration
             $table->foreign('user_id')->references('id')->on('users');
         });
 
-        Schema::create('filme_lista_filmes', function(blueprint $table){
+        Schema::create('lista_filmes', function(blueprint $table){
             $table->id();
             $table->unsignedBigInteger('filme_id');
             $table->unsignedBigInteger('lista_id');
@@ -43,7 +43,7 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('filme_lista_filmes');
+        Schema::dropIfExists('lista_filmes');
         Schema::dropIfExists('listas');
     }
 };

@@ -7,7 +7,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CriaListaController;
 use App\Http\Controllers\FilmeController;
 use App\Http\Controllers\MeuPerfilController;
-use App\Http\Controllers\MinhaListaController;
+use App\Http\Controllers\ListaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -44,5 +44,6 @@ Route::middleware('autenticacao')->prefix('/app')->group(function(){
     Route::get('/listafilme', [FilmeListaController::class, 'index'])->name('app.listafilme');
 
     Route::resource('filme', FilmeController::class);
-    Route::resource('minha-lista', MinhaListaController::class);
+    Route::resource('lista', ListaController::class);
+    //Route::resource('minha-lista', MinhaListaController::class);
 });
