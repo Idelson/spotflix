@@ -28,6 +28,7 @@ return new class extends Migration
             $table->unsignedBigInteger('filme_id');
             $table->unsignedBigInteger('lista_id');
             $table->string('status', 45);
+            $table->timestamps();
 
             $table->foreign('filme_id')->references('id')->on('filmes');
             $table->foreign('lista_id')->references('id')->on('listas');

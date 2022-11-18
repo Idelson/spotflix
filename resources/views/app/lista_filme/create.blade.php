@@ -20,18 +20,19 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td><a href="">Excluir</a></td>
-                </tr>
-                
+                @foreach ($filmes as $filme)
+                    <tr>
+                        <td>{{ $filme->titulo }}</td>
+                        <td>{{ $filme->ano }}</td>
+                        <td>{{ $filme->duracao }}</td>
+                        <td><a href="">Excluir</a></td>
+                    </tr>
+                @endforeach                
             </tbody>
         </table>
     </div><br>
     <div>
-        <form method='post' action='{{-- route('app.lista-filme.store') --}}'>
+        <form method="post" action="{{-- route('app.lista-filme.store', ['filme'=>$filme->id]) --}}">
             @csrf
             <select>
                 <option>--Selecione o Filme--</option>
@@ -39,7 +40,7 @@
                     <option>{{ $filme->titulo }}</option>
                 @endforeach
             </select>
-            <button type="submit" class="botao">Incluir Filme</button>
+            <button type="submit" >Incluir Filme</button>
         </form>
     </div>
 @endsection

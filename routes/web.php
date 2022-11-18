@@ -31,7 +31,6 @@ Route::get('/', [PrincipalController::class, 'index'])->name('site.principal');
 Route::get('/cadastrousuario', [CadastroUsuarioController::class, 'index'])->name('site.cadastro');
 Route::post('/cadastrousuario', [CadastroUsuarioController::class, 'cadastrar'])->name('site.cadastro');
 
-
 Route::get('/login/{erro?}', [LoginController::class, 'index'])->name('site.login');
 Route::post('/login', [LoginController::class, 'autenticar'])->name('site.login');
 
@@ -40,10 +39,9 @@ Route::middleware('autenticacao')->prefix('/app')->group(function(){
     Route::get('/home', [HomeController::class, 'index'])->name('app.home');
     Route::get('/sair', [LoginController::class, 'sair'])->name('app.sair');
     Route::get('/meuperfil', [MeuPerfilController::class, 'index'])->name('app.meuperfil');
-    Route::get('/crialista', [CriaListaController::class, 'index'])->name('app.crialista');
     
     Route::get('/lista-filme/create/{lista}', [ListaFilmeController::class, 'create'])->name('app.lista-filme.create');
-    Route::post('/lista-filme/store/{lista}', [ListaFilmeController::class, 'store'])->name('app.lista-filme.store');
+    Route::post('/lista-filme/store/{filme}', [ListaFilmeController::class, 'store'])->name('app.lista-filme.store');
 
     Route::resource('filme', FilmeController::class);
     Route::resource('lista', ListaController::class);
