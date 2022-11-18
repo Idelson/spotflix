@@ -21,7 +21,7 @@
                         <td>{{ $lista->imagem }}</td>
                         <td>{{ $lista->nome }}</td>
                         <td><a href="">Visualizar</a></td>
-                        <td><a href="">Adicionar Filme</a></td>
+                        <td><a href="{{ route('app.lista-filme.create', ['lista' => $lista->id]) }}">Adicionar Filme</a></td>
                         <td><a href="">Editar</a></td>
                         <td><a href="">Excluir</a></td>
                     </tr>

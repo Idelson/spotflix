@@ -5,12 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Lista extends Model
+class ListaFilme extends Model
 {
     use HasFactory;
-    protected $fillable = ['nome', 'imagem', 'user_id'];
-
-    public function filmes(){
-        
-    }
+    protected $fillable = ['filme_id', 'lista_id'];
 }

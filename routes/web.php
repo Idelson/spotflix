@@ -8,6 +8,7 @@ use App\Http\Controllers\CriaListaController;
 use App\Http\Controllers\FilmeController;
 use App\Http\Controllers\MeuPerfilController;
 use App\Http\Controllers\ListaController;
+use App\Http\Controllers\ListaFilmeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -41,9 +42,10 @@ Route::middleware('autenticacao')->prefix('/app')->group(function(){
     Route::get('/meuperfil', [MeuPerfilController::class, 'index'])->name('app.meuperfil');
     Route::get('/crialista', [CriaListaController::class, 'index'])->name('app.crialista');
     
-    Route::get('/listafilme', [FilmeListaController::class, 'index'])->name('app.listafilme');
+    Route::get('/lista-filme/create/{lista}', [ListaFilmeController::class, 'create'])->name('app.lista-filme.create');
+    Route::post('/lista-filme/store/{lista}', [ListaFilmeController::class, 'store'])->name('app.lista-filme.store');
 
     Route::resource('filme', FilmeController::class);
     Route::resource('lista', ListaController::class);
-    //Route::resource('minha-lista', MinhaListaController::class);
+
 });
