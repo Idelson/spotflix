@@ -8,7 +8,8 @@
         <h4>Detalhes da Lista</h4>
         <p>Nome da Lista: <strong>{{$lista->nome}}</strong></p>
     </div>
-
+    
+    <p><a href="{{ route('lista.index') }}">Voltar</a></p>
     <div>
         <table border='1'>
             <thead>
@@ -20,14 +21,14 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($filmes as $filme)
+                @foreach ($lista->filmes as $filme)
                     <tr>
                         <td>{{ $filme->titulo }}</td>
                         <td>{{ $filme->ano }}</td>
                         <td>{{ $filme->duracao }}</td>
                         <td><a href="">Excluir</a></td>
                     </tr>
-                @endforeach                
+                @endforeach              
             </tbody>
         </table>
     </div><br>

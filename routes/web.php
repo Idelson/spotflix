@@ -4,7 +4,6 @@ use App\Http\Controllers\CadastroUsuarioController;
 use App\Http\Controllers\PrincipalController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\CriaListaController;
 use App\Http\Controllers\FilmeController;
 use App\Http\Controllers\MeuPerfilController;
 use App\Http\Controllers\ListaController;
@@ -41,7 +40,7 @@ Route::middleware('autenticacao')->prefix('/app')->group(function(){
     Route::get('/meuperfil', [MeuPerfilController::class, 'index'])->name('app.meuperfil');
     
     Route::get('/lista-filme/create/{lista}', [ListaFilmeController::class, 'create'])->name('app.lista-filme.create');
-    Route::post('/lista-filme/store/{filme}', [ListaFilmeController::class, 'store'])->name('app.lista-filme.store');
+    Route::post('/lista-filme/store/{lista}', [ListaFilmeController::class, 'store'])->name('app.lista-filme.store');
 
     Route::resource('filme', FilmeController::class);
     Route::resource('lista', ListaController::class);

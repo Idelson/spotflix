@@ -26,6 +26,7 @@ class ListaFilmeController extends Controller
      */
     public function create(Lista $lista)
     {
+        //print_r($lista->filmes);
         $filmes = Filme::orderBy('titulo')->get();
         return view('app.lista_filme.create', ['lista'=>$lista, 'filmes'=>$filmes]);
     }

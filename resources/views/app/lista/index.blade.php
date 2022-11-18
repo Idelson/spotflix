@@ -5,6 +5,7 @@
 @section('conteudo')
     <div class='listas'>
         <h3>Minhas Listas</h3>
+        
         <table border='1' width='80%'>
         
             <thead>
