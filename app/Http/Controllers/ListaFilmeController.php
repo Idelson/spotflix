@@ -39,7 +39,7 @@ class ListaFilmeController extends Controller
      */
     public function store(Request $request, Filme $filme)
     {
-        echo $filme->id;
+        dd($filme);
         //$listaFilme = new ListaFilme();
         //$listaFilme->
     }
