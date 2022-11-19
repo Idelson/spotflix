@@ -12,6 +12,6 @@ class Lista extends Model
     protected $fillable = ['nome', 'imagem', 'user_id'];
 
     public function filmes(){
-        return $this->BelongsToMany('App\Models\Filme', 'lista_filmes');//->withPivot('id'.'created_at');
+        return $this->BelongsToMany('App\Models\Filme', 'lista_filmes')->withPivot('created_at');
     }
 }
