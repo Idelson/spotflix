@@ -26,7 +26,7 @@ class ListaFilmeController extends Controller
      */
     public function create(Lista $lista)
     {
-        //print_r($lista->filmes);
+        
         $filmes = Filme::orderBy('titulo')->get();
         return view('app.lista_filme.create', ['lista'=>$lista, 'filmes'=>$filmes]);
     }
@@ -37,11 +37,12 @@ class ListaFilmeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, Filme $filme)
-    {
-        dd($filme);
-        //$listaFilme = new ListaFilme();
-        //$listaFilme->
+    public function store(Request $request, Lista $lista)
+    {   
+
+        $lista->filmes()->attach($request->get('filme_id'),['status'=>'ativo']);
+
+        return redirect()->route('app.lista-filme.create',['lista'=>$lista->id]);
     }
 
     /**

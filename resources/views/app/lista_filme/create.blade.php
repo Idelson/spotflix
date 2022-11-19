@@ -32,16 +32,17 @@
             </tbody>
         </table>
     </div><br>
+    
     <div>
-        <form method="post" action="{{-- route('app.lista-filme.store', ['filme'=>$filme->id]) --}}">
+        <form method="post" action="{{ route('app.lista-filme.store', ['lista'=>$lista->id]) }}">
             @csrf
             <select name='filme_id'>
                 <option>--Selecione o Filme--</option>
                 @foreach ($filmes as $filme)
-                    <option value='{{ $filme->id }}'>{{ $filme->titulo }}</option>
+                    <option value='{{ $filme->id }} '>{{ $filme->titulo }}</option>
                 @endforeach
             </select>
-            <p>{{print_r($filme->id)}}</p>
+            
             <button type="submit" id='bt'>Incluir Filme</button>
         </form>
     </div>
