@@ -26,7 +26,15 @@
                         <td>{{ $filme->titulo }}</td>
                         <td>{{ $filme->ano }}</td>
                         <td>{{ $filme->duracao }}</td>
-                        <td><a href="">Excluir</a></td>
+                        <td>
+                            
+                            <form id='form_{{$lista->id}}_{{$filme->id}}' method='post' action="{{ route('lista-filme.destroy', ['lista'=>$lista->id, 'filme'=>$filme->id]) }}">
+                                @method('DELETE')
+                                @csrf
+                                <a href="#" onclick="document.getElementById('form_{{$lista->id}}_{{$filme->id}}').submit()">Excluir</a>
+
+                            </form>
+                        </td>
                     </tr>
                 @endforeach              
             </tbody>
@@ -34,7 +42,7 @@
     </div><br>
     
     <div>
-        <form method="post" action="{{ route('app.lista-filme.store', ['lista'=>$lista->id]) }}">
+        <form method="post" action="{{ route('lista-filme.store', ['lista'=>$lista->id]) }}">
             @csrf
             <select name='filme_id'>
                 <option>--Selecione o Filme--</option>

@@ -42,7 +42,7 @@ class ListaFilmeController extends Controller
 
         $lista->filmes()->attach($request->get('filme_id'),['status'=>'ativo']);
 
-        return redirect()->route('app.lista-filme.create',['lista'=>$lista->id]);
+        return redirect()->route('lista-filme.create',['lista'=>$lista->id]);
     }
 
     /**
@@ -85,8 +85,15 @@ class ListaFilmeController extends Controller
      * @param  \App\Models\ListaFilme  $listaFilme
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ListaFilme $listaFilme)
+    public function destroy(/*ListaFilme $listaFilme*/ Lista $lista, Filme $filme)
     {
-        //
+
+        //$listaFilme->delete();
+
+
+        //echo $lista->id.' - '.$filme->id;
+        $lista->filmes()->detach($filme->id);
+
+        return redirect()->route('lista-filme.create',['lista'=>$lista->id]);
     }
 }
