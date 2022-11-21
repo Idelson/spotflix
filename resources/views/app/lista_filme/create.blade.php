@@ -21,6 +21,7 @@
                 </tr>
             </thead>
             <tbody>
+               
                 @foreach ($lista->filmes as $filme)
                     <tr>
                         <td>{{ $filme->titulo }}</td>
@@ -28,10 +29,10 @@
                         <td>{{ $filme->duracao }}</td>
                         <td>
                             
-                            <form id='form_{{$lista->id}}_{{$filme->id}}' method='post' action="{{ route('lista-filme.destroy', ['lista'=>$lista->id, 'filme'=>$filme->id]) }}">
+                            <form id='form_{{$filme->pivot->id}}' method='post' action="{{ route('lista-filme.destroy', ['listaFilme'=>$filme->pivot->id, 'lista_id'=>$lista->id])}}">
                                 @method('DELETE')
                                 @csrf
-                                <a href="#" onclick="document.getElementById('form_{{$lista->id}}_{{$filme->id}}').submit()">Excluir</a>
+                                <a href="#" onclick="document.getElementById('form_{{$filme->pivot->id}}').submit()">Excluir</a>
 
                             </form>
                         </td>

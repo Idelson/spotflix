@@ -85,15 +85,12 @@ class ListaFilmeController extends Controller
      * @param  \App\Models\ListaFilme  $listaFilme
      * @return \Illuminate\Http\Response
      */
-    public function destroy(/*ListaFilme $listaFilme*/ Lista $lista, Filme $filme)
+    public function destroy(ListaFilme $listaFilme, $lista_id)
     {
 
-        //$listaFilme->delete();
+        $listaFilme->delete();
 
 
-        //echo $lista->id.' - '.$filme->id;
-        $lista->filmes()->detach($filme->id);
-
-        return redirect()->route('lista-filme.create',['lista'=>$lista->id]);
+        return redirect()->route('lista-filme.create',['lista'=>$lista_id]);
     }
 }
