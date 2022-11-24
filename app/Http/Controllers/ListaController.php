@@ -54,7 +54,8 @@ class ListaController extends Controller
      */
     public function show(Lista $lista)
     {
-        //
+        
+        return view('app.lista.show', ['lista'=>$lista]);
     }
 
     /**

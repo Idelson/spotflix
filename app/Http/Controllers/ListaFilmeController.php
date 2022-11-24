@@ -51,9 +51,10 @@ class ListaFilmeController extends Controller
      * @param  \App\Models\ListaFilme  $listaFilme
      * @return \Illuminate\Http\Response
      */
-    public function show(ListaFilme $listaFilme)
+    public function show(/*ListaFilme $listaFilme*/Lista $lista)
     {
-        //
+        
+        return view('app.lista_filme.show',['lista'=>$lista]);
     }
 
     /**
@@ -89,7 +90,6 @@ class ListaFilmeController extends Controller
     {
 
         $listaFilme->delete();
-
 
         return redirect()->route('lista-filme.create',['lista'=>$lista_id]);
     }

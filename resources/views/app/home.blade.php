@@ -21,7 +21,7 @@
                 <tr>
                     <td>{{ $lista->imagem }}</td>
                     <td>{{ $lista->nome }}</td>
-                    <td><a href="">Visualizar</a></td>
+                    <td><a href="{{ route('lista.show', ['lista' => $lista->id]) }}">Visualizar</a></td>
                 </tr>
                 
             @endforeach

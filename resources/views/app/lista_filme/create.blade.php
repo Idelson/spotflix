@@ -33,7 +33,6 @@
                                 @method('DELETE')
                                 @csrf
                                 <a href="#" onclick="document.getElementById('form_{{$filme->pivot->id}}').submit()">Excluir</a>
-
                             </form>
                         </td>
                     </tr>
