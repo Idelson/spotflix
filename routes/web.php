@@ -49,7 +49,7 @@ Route::middleware('autenticacao')->prefix('/app')->group(function(){
     //Route::resource('lista', ListaController::class);
     Route::get('lista', [ListaController::class, 'index'])->name('lista.index');
     Route::get('lista/create', [ListaController::class, 'create'])->name('lista.create');
-    Route::get('lista/store', [ListaController::class, 'store'])->name('lista.store');
+    Route::post('lista/store', [ListaController::class, 'store'])->name('lista.store');
     Route::get('lista/show/{lista}', [ListaController::class, 'show'])->name('lista.show');
 
 });

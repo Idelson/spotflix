@@ -15,7 +15,7 @@ class ListaController extends Controller
     public function index()
     {
         //cria o objeto com as listas somente do usuário logado
-        $listas = Lista::orderBy('nome')->paginate(10)->where('user_id', $_SESSION['id']);
+        $listas = Lista::orderBy('nome')->paginate(15)->where('user_id', $_SESSION['id']);
         //retorna a view e passa o parâmetro retornado da model
         return view('app.lista.index', ['listas' => $listas]);
     }

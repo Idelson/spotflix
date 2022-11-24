@@ -17,6 +17,7 @@
                 </tr>
             </thead>
             <tbody>
+            
                 @foreach ($listas as $lista)
                     <tr>
                         <td>{{ $lista->imagem }}</td>
