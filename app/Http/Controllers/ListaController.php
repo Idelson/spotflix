@@ -66,7 +66,7 @@ class ListaController extends Controller
      */
     public function edit(Lista $lista)
     {
-        //
+        return view('app.lista.edit', ['lista'=>$lista]);
     }
 
     /**
@@ -78,7 +78,8 @@ class ListaController extends Controller
      */
     public function update(Request $request, Lista $lista)
     {
-        //
+        $lista->update($request->all());
+        return redirect()->route('lista.index');
     }
 
     /**

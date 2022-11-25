@@ -63,9 +63,10 @@ class ListaFilmeController extends Controller
      * @param  \App\Models\ListaFilme  $listaFilme
      * @return \Illuminate\Http\Response
      */
-    public function edit(ListaFilme $listaFilme)
+    public function edit(/*ListaFilme $listaFilme*/Lista $lista)
     {
-        //
+        
+        return view('app.lista_filme.edit', ['lista'=>$lista]);
     }
 
     /**
@@ -75,9 +76,11 @@ class ListaFilmeController extends Controller
      * @param  \App\Models\ListaFilme  $listaFilme
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ListaFilme $listaFilme)
+    public function update(Request $request, /*ListaFilme $listaFilme*/Lista $lista)
     {
-        //
+        
+        $lista->update($request->all());
+        return redirect()->route('lista.index');
     }
 
     /**

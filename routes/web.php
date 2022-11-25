@@ -43,6 +43,7 @@ Route::middleware('autenticacao')->prefix('/app')->group(function(){
     Route::get('/lista-filme/create/{lista}', [ListaFilmeController::class, 'create'])->name('lista-filme.create');
     Route::post('/lista-filme/store/{lista}', [ListaFilmeController::class, 'store'])->name('lista-filme.store');
     Route::get('/lista-filme/show/{lista}', [ListaFilmeController::class, 'show'])->name('lista-filme.show');
+    Route::get('/lista-filme/edit/{lista}', [ListaFilmeController::class, 'edit'])->name('lista-filme.edit');
     Route::delete('/lista-filme/destroy/{listaFilme}/{lista_id}', [ListaFilmeController::class, 'destroy'])->name('lista-filme.destroy');
     
     Route::resource('filme', FilmeController::class);
@@ -51,5 +52,6 @@ Route::middleware('autenticacao')->prefix('/app')->group(function(){
     Route::get('lista/create', [ListaController::class, 'create'])->name('lista.create');
     Route::post('lista/store', [ListaController::class, 'store'])->name('lista.store');
     Route::get('lista/show/{lista}', [ListaController::class, 'show'])->name('lista.show');
-
+    Route::get('lista/edit/{lista}', [ListaController::class, 'edit'])->name('lista.edit');
+    Route::put('lista/update/{lista}', [ListaController::class, 'update'])->name('lista.update');
 });
