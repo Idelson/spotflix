@@ -4,14 +4,12 @@
 
 @section('conteudo')
     
-    <p><a href="{{ route('lista.index') }}">Voltar</a></p>
-    
     <div id="cadastro-lista">
         <h4>Detalhes da Lista</h4>
         <p>Nome da Lista: <strong>{{$lista->nome}}</strong></p>
     </div>
     
-    <p><a href="{{ route('app.home') }}">Voltar</a></p>
+    <p><a href="{{ route('lista.index') }}">Voltar</a></p>
     <div>
         <table border='1'>
             <thead>

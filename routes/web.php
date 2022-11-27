@@ -54,4 +54,6 @@ Route::middleware('autenticacao')->prefix('/app')->group(function(){
     Route::get('lista/show/{lista}', [ListaController::class, 'show'])->name('lista.show');
     Route::get('lista/edit/{lista}', [ListaController::class, 'edit'])->name('lista.edit');
     Route::put('lista/update/{lista}', [ListaController::class, 'update'])->name('lista.update');
+    Route::get('lista/destroy/{lista}', [ListaController::class, 'destroy'])->name('lista.destroy');
+
 });

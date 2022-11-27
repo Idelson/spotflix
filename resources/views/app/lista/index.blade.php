@@ -25,7 +25,7 @@
                         <td><a href="{{ route('lista-filme.show', ['lista' => $lista->id]) }}">Visualizar</a></td>
                         <td><a href="{{ route('lista-filme.create', ['lista' => $lista->id]) }}">Adicionar Filme</a></td>
                         <td><a href="{{ route('lista.edit', ['lista' => $lista->id]) }}">Editar</a></td>
-                        <td><a href="">Excluir</a></td>
+                        <td><a href="{{ route('lista.destroy', ['lista' => $lista->id]) }}">Excluir</a></td>
                     </tr>
         
                 @endforeach

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Lista;
+use App\Models\ListaFilme;
 use Illuminate\Http\Request;
 
 class ListaController extends Controller
@@ -90,6 +91,10 @@ class ListaController extends Controller
      */
     public function destroy(Lista $lista)
     {
-        //
+
+        ListaFilme::where(['lista_id' => $lista->id])->delete();
+
+        $lista->delete();
+        return redirect()->route('lista.index');
     }
 }
