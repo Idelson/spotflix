@@ -61,7 +61,7 @@ class LoginController extends Controller
             $_SESSION['id'] = $usuario->id;
             
             //redireciona para página home da aplicação
-            return redirect()->route('app.home');
+            return redirect()->route('home.index');
         }else{
             //redireciona para página de login caso usuário e senha não exista
             return redirect()->route('site.login', ['erro' => 1]);

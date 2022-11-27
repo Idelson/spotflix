@@ -16,8 +16,6 @@ class HomeController extends Controller
 
     public function show(Request $request){
         $listas = Lista::where('nome', 'like', '%'.$request->input('nome').'%')->orderBy('nome')->paginate(15);
-        //$listas = new Lista();
-        //print_r($listas);
         return view('app.home.show',['listas'=>$listas]);
     }
 }
