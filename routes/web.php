@@ -35,7 +35,9 @@ Route::post('/login', [LoginController::class, 'autenticar'])->name('site.login'
 
 
 Route::middleware('autenticacao')->prefix('/app')->group(function(){
-    Route::get('/home', [HomeController::class, 'index'])->name('app.home');
+    Route::get('/home', [HomeController::class, 'index'])->name('home.index');
+    Route::get('/home/show', [HomeController::class, 'show'])->name('home.show');
+
     Route::get('/sair', [LoginController::class, 'sair'])->name('app.sair');
     Route::get('/meuperfil', [MeuPerfilController::class, 'index'])->name('app.meuperfil');
     
@@ -55,5 +57,5 @@ Route::middleware('autenticacao')->prefix('/app')->group(function(){
     Route::get('lista/edit/{lista}', [ListaController::class, 'edit'])->name('lista.edit');
     Route::put('lista/update/{lista}', [ListaController::class, 'update'])->name('lista.update');
     Route::get('lista/destroy/{lista}', [ListaController::class, 'destroy'])->name('lista.destroy');
-
+    
 });

@@ -9,7 +9,7 @@
         <p>Nome da Lista: <strong>{{$lista->nome}}</strong></p>
     </div>
     
-    <p><a href="{{ route('app.home') }}">Voltar</a></p>
+    <p><a href="{{ route('home.index') }}">Voltar</a></p>
     <div>
         <table border='1'>
             <thead>
