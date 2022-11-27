@@ -26,8 +26,10 @@ class ListaFilmeController extends Controller
      */
     public function create(Lista $lista)
     {
-        
+        //Cria objeto com os filmes
         $filmes = Filme::orderBy('titulo')->get();
+
+        //Abre a view para visualização dos filmes por lista
         return view('app.lista_filme.create', ['lista'=>$lista, 'filmes'=>$filmes]);
     }
 
@@ -39,9 +41,10 @@ class ListaFilmeController extends Controller
      */
     public function store(Request $request, Lista $lista)
     {   
-
+        //Persiste os filmes no banco de dados
         $lista->filmes()->attach($request->get('filme_id'),['status'=>'ativo']);
 
+        //Redireciona para inclusão/exclusão de filmes de uma lista
         return redirect()->route('lista-filme.create',['lista'=>$lista->id]);
     }
 
@@ -53,7 +56,7 @@ class ListaFilmeController extends Controller
      */
     public function show(/*ListaFilme $listaFilme*/Lista $lista)
     {
-        
+        //Abre view visualização de filmes por lista
         return view('app.lista_filme.show',['lista'=>$lista]);
     }
 
@@ -78,9 +81,10 @@ class ListaFilmeController extends Controller
      */
     public function update(Request $request, /*ListaFilme $listaFilme*/Lista $lista)
     {
-        
+        /*
         $lista->update($request->all());
         return redirect()->route('lista.index');
+        */
     }
 
     /**
@@ -91,9 +95,10 @@ class ListaFilmeController extends Controller
      */
     public function destroy(ListaFilme $listaFilme, $lista_id)
     {
-
+        //Exclui filme da listagem de filmes de uma lista
         $listaFilme->delete();
-
+        
+        //Redireciona para inclusão/exclusão de filmes de uma lista
         return redirect()->route('lista-filme.create',['lista'=>$lista_id]);
     }
 }
