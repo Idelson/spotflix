@@ -40,9 +40,8 @@
                         <td><a href="">Incluir em Minhas Listas</a></td>
                     @endif
                     
-
                 </tr>
-                
+
             @endforeach
             
         </tbody>

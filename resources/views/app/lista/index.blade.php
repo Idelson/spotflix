@@ -3,6 +3,32 @@
 @section('titulo', 'Minhas Listas')
 
 @section('conteudo')
+    
+    <div class='listas-importadas'>
+        <h3>Minhas Listas Importadas</h3>
+        <table border='1' width='80%'>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Autor</th>
+                    <th colspan='2'>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($listaUsuarios as $usuarios)
+                    <tr>
+                        <td>{{$usuarios->lista_id}}</td>
+                        <td>{{$usuarios->user_id}}</td>
+                        <td>Visualizar</td>
+                        <td>Excluir</td>
+                    </tr>
+                @endforeach
+                
+            </tbody>
+        </table>
+    </div>
+ 
+
     <div class='listas'>
         <h3>Minhas Listas</h3>
         

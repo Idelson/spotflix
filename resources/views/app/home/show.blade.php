@@ -10,7 +10,7 @@
         <form method="get" action="{{ route('home.show') }}">
             @csrf
             <input class="forms" name="nome" placeholder="Nome da Lista">
-            <button type='submit' >Cadastrar</button>
+            <button type='submit' >Pesquisar</button>
         </form>
     
     </div><br><br>
@@ -32,16 +32,41 @@
 
                 <tr>
                     <td>{{ $lista->imagem }}</td>
-                    <td>{{ $lista->nome }}</td>
+                    <td><strong>{{ $lista->nome }}</strong></td>
                     <td><a href="{{ route('lista.show', ['lista' => $lista->id]) }}">Visualizar</a></td>
                     @if ($lista->user_id == $_SESSION['id'])
                         <td>Já incluso em Minhas Listas</td>
                     @else
-                        <td><a href="">Incluir em Minhas Listas</a></td>
+                        <td><a href="{{ route('lista-usuario.store', ['lista' => $lista->id]) }}">Incluir em Minhas Listas</a></td>
                     @endif
 
                 </tr>
-                
+
+                <tr >
+                    <td colspan='4' >
+    
+                        <table border='1' >
+                            <thead>
+                                <tr>
+                                    <th>Título</th>
+                                    <th>Ano</th>
+                                    <th>Duração</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+    
+                                @foreach ($lista->filmes as $filme)
+                                    <tr>
+                                        <td>{{ $filme->titulo }}</td>
+                                        <td>{{ $filme->ano }}</td>
+                                        <td>{{ $filme->duracao }}</td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+    
+                    </td>
+                </tr>
             @endforeach
             
         </tbody>

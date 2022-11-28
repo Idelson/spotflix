@@ -8,6 +8,7 @@ use App\Http\Controllers\FilmeController;
 use App\Http\Controllers\MeuPerfilController;
 use App\Http\Controllers\ListaController;
 use App\Http\Controllers\ListaFilmeController;
+use App\Http\Controllers\ListaUsuarioController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -48,6 +49,8 @@ Route::middleware('autenticacao')->prefix('/app')->group(function(){
     Route::get('/lista-filme/edit/{lista}', [ListaFilmeController::class, 'edit'])->name('lista-filme.edit');
     Route::delete('/lista-filme/destroy/{listaFilme}/{lista_id}', [ListaFilmeController::class, 'destroy'])->name('lista-filme.destroy');
     
+    Route::get('/lista-usuario/store/{lista}', [ListaUsuarioController::class, 'store'])->name('lista-usuario.store');
+
     Route::resource('filme', FilmeController::class);
     //Route::resource('lista', ListaController::class);
     Route::get('lista', [ListaController::class, 'index'])->name('lista.index');

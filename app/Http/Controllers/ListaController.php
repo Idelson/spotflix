@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Lista;
 use App\Models\ListaFilme;
+use App\Models\ListaUsuario;
 use Illuminate\Http\Request;
 
 class ListaController extends Controller
@@ -17,8 +18,11 @@ class ListaController extends Controller
     {
         //cria o objeto com as listas somente do usuário logado
         $listas = Lista::orderBy('nome')->paginate(15)->where('user_id', $_SESSION['id']);
+
+        $listaUsuarios = ListaUsuario::paginate(15)->where('user_id', $_SESSION['id']);
+
         //retorna a view e passa o parâmetro retornado da model
-        return view('app.lista.index', ['listas' => $listas]);
+        return view('app.lista.index', ['listas' => $listas, 'listaUsuarios' => $listaUsuarios]);
     }
 
     /**

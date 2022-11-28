@@ -19,7 +19,7 @@
         </thead>
 
         <tbody>
-    
+            
             @foreach ($filmes as $filme)
      
                 <tr>
