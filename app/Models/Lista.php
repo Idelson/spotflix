@@ -15,5 +15,7 @@ class Lista extends Model
         return $this->BelongsToMany('App\Models\Filme', 'lista_filmes')->withPivot('id','created_at');
     }
 
-    
+    public function user(){
+        return $this->BelongsTo('App\Models\User', 'user_id', 'id');
+    }
 }

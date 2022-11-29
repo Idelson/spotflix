@@ -18,7 +18,7 @@
                 @foreach ($listaUsuarios as $listaUsuario)
                     <tr>
                         <td>{{$listaUsuario->lista->nome}}</td>
-                        <td>{{$listaUsuario->user_id}}</td>
+                        <td>{{$listaUsuario->lista->user->name}}</td>
                         <td>Visualizar</td>
                         <td>Excluir</td>
                     </tr>
