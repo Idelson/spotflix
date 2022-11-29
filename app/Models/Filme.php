@@ -15,6 +15,7 @@ class Filme extends Model
     public function classificacao(){
         //tras para classe filme os atributos da classe classificação
         return $this->belongsTo('App\Models\Classificacao','classificacoe_id', 'id'); //BelongsTo = pertence a ...
+        
     }
     
 }

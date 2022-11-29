@@ -9,4 +9,10 @@ class ListaUsuario extends Model
 {
     use HasFactory;
     protected $fillable = ['user_id', 'lista_id'];
+
+    //não funcionou
+    public function lista(){
+        
+        return $this->BelongsTo('App\Models\Lista', 'lista_id', 'id');
+    }
 }

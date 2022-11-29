@@ -15,10 +15,10 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($listaUsuarios as $usuarios)
+                @foreach ($listaUsuarios as $listaUsuario)
                     <tr>
-                        <td>{{$usuarios->lista_id}}</td>
-                        <td>{{$usuarios->user_id}}</td>
+                        <td>{{$listaUsuario->lista->nome}}</td>
+                        <td>{{$listaUsuario->user_id}}</td>
                         <td>Visualizar</td>
                         <td>Excluir</td>
                     </tr>
