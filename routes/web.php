@@ -49,9 +49,14 @@ Route::middleware('autenticacao')->prefix('/app')->group(function(){
     Route::get('/lista-filme/edit/{lista}', [ListaFilmeController::class, 'edit'])->name('lista-filme.edit');
     Route::delete('/lista-filme/destroy/{listaFilme}/{lista_id}', [ListaFilmeController::class, 'destroy'])->name('lista-filme.destroy');
     
+
     Route::get('/lista-usuario/store/{lista}', [ListaUsuarioController::class, 'store'])->name('lista-usuario.store');
+    Route::get('/lista-usuario/destroy/{listaUsuario}', [ListaUsuarioController::class, 'destroy'])->name('lista-usuario.destroy');
+
 
     Route::resource('filme', FilmeController::class);
+
+
     //Route::resource('lista', ListaController::class);
     Route::get('lista', [ListaController::class, 'index'])->name('lista.index');
     Route::get('lista/create', [ListaController::class, 'create'])->name('lista.create');

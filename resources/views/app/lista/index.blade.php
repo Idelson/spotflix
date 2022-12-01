@@ -5,7 +5,7 @@
 @section('conteudo')
     
     <div class='listas-importadas'>
-        <h3>Minhas Listas Importadas</h3>
+        <h3>Listas Importadas</h3>
         <table border='1' width='80%'>
             <thead>
                 <tr>
@@ -19,15 +19,15 @@
                     <tr>
                         <td>{{$listaUsuario->lista->nome}}</td>
                         <td>{{$listaUsuario->lista->user->name}}</td>
-                        <td>Visualizar</td>
-                        <td>Excluir</td>
+                        <td><a href="{{ route('lista.show', ['lista' => $listaUsuario->lista->id]) }}">Visualizar</a></td>
+                        <td><a href="{{ route('lista-usuario.destroy', ['listaUsuario' => $listaUsuario->id]) }}">Excluir</a></td>
                     </tr>
                 @endforeach
                 
             </tbody>
         </table>
     </div>
- 
+    
 
     <div class='listas'>
         <h3>Minhas Listas</h3>

@@ -12,7 +12,7 @@ class ListaUsuario extends Model
 
 
     public function lista(){
-        return $this->BelongsTo('App\Models\Lista', 'lista_id', 'id');
+        return $this->BelongsTo('App\Models\Lista', 'lista_id', 'id');//->withPivot('id');
     }
 
     

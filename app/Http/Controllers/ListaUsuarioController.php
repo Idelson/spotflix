@@ -88,6 +88,12 @@ class ListaUsuarioController extends Controller
      */
     public function destroy(ListaUsuario $listaUsuario)
     {
-        //
+        /*echo "<pre>";
+        print_r($listaUsuario->id);
+        echo "</pre>";*/
+        $listaUsuario->delete();
+
+        //redireciona para minhas listas
+        return redirect()->route('lista.index');
     }
 }
