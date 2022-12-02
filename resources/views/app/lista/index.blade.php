@@ -19,7 +19,7 @@
                     <tr>
                         <td>{{$listaUsuario->lista->nome}}</td>
                         <td>{{$listaUsuario->lista->user->name}}</td>
-                        <td><a href="{{ route('lista.show', ['lista' => $listaUsuario->lista->id]) }}">Visualizar</a></td>
+                        <td><a href="{{ route('lista-filme.show', ['lista' => $listaUsuario->lista->id]) }}">Visualizar</a></td>
                         <td><a href="{{ route('lista-usuario.destroy', ['listaUsuario' => $listaUsuario->id]) }}">Excluir</a></td>
                     </tr>
                 @endforeach

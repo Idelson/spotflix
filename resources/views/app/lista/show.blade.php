@@ -4,9 +4,9 @@
 
 @section('conteudo')
 
-<div id="cadastro-lista">
+    <div id="cadastro-lista">
         <h4>Detalhes da Lista</h4>
-        <p>Nome da Lista: <strong>{{$lista->nome}}</strong></p>
+        <p>Nome da Lista: <strong>{{"$lista->nome - $lista->id - $lista->user_id"}}</strong></p>
     </div>
     
     <p><a href="{{ route('home.index') }}">Voltar</a></p>
@@ -26,7 +26,6 @@
                         <td>{{ $filme->titulo }}</td>
                         <td>{{ $filme->ano }}</td>
                         <td>{{ $filme->duracao }}</td>
-
                     </tr>
                 @endforeach              
             </tbody>

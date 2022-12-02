@@ -37,7 +37,7 @@
                     @if ($lista->user_id == $_SESSION['id'])
                         <td>Já incluso em Minhas Listas</td>
                     @else
-                        <td><a href="">Incluir em Minhas Listas</a></td>
+                        <td><a href="{{ route('lista-usuario.store', ['lista' => $lista->id]) }}">Incluir em Minhas Listas</a></td>
                     @endif
                     
                 </tr>
