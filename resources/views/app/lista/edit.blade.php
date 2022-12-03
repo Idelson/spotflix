@@ -3,9 +3,10 @@
 @section('titulo', 'Minhas Listas')
 
 @section('conteudo')
-    <p><a href="{{ route('lista.index') }}">Voltar</a></p>
-    <div id="cadastro-lista">
 
+    <p><a href="{{ route('lista.index') }}">Voltar</a></p>
+
+    <div id="cadastro-lista">
         <form method="post" action="{{ route('lista.update',['lista'=>$lista->id]) }}">
             @method('PUT')
             @csrf
@@ -14,6 +15,6 @@
 
             <button type='submit' >Editar</button>
         </form>
-    
     </div>
+
 @endsection
