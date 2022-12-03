@@ -103,6 +103,9 @@ class ListaController extends Controller
         //Exclui todos os filmes da lista selecionada
         ListaFilme::where(['lista_id' => $lista->id])->delete();
 
+        //Exclui todos a lista de todos os usuários
+        ListaUsuario::where(['lista_id' => $lista->id])->delete();
+
         //Exclui a lista
         $lista->delete();
 
