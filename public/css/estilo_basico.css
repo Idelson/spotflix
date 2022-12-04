@@ -44,6 +44,8 @@ html, body{
 }
 /*-------Fim da estrutura principal--------*/
 
+
+
 /*--------Início da Página Home---------*/
 #pesquisa-lista{
     width: 99.7%;
@@ -51,6 +53,8 @@ html, body{
 
 }
 /*--------Fim da Página Home---------*/
+
+
 
 /*--------Início da Página Minhas listas---------*/
 .listas-importadas{
@@ -62,6 +66,17 @@ html, body{
 }
 
 /*--------Fim da Página Minhas listas---------*/
+
+
+
+/*--------Início da Página Principal---------*/
+#div-conteudo-pagina-principal{
+    text-align: center;
+}
+/*--------Fim da Página Principal---------*/
+
+
+
 a{
     text-decoration: none;
     color: black;
@@ -79,7 +94,8 @@ h1{
 }
 .img_primaria{
     width:50%;
-    margin: auto;
+    border-radius: 10px;
+    /*margin: auto;*/
     
 }
 #filme_todos{
