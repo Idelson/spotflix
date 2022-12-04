@@ -17,5 +17,7 @@
             <button type='submit' class='bot'>Acessar</button>
         </form><br>
         {{ isset($erro) && $erro != "" ? $erro : '' }}
+        <a href='{{route('site.principal')}}'>Voltar</a>
     </div>
+    
 @endsection

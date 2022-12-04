@@ -17,7 +17,9 @@
             <input name='password' value='{{ old('password') }}' type='password' placeholder='Senha' class='input_form_login'><br><br>
             
             <button type='submit' class='bot'>Cadastrar</button>
+            
         </form><br>
-        
+        <a href='{{route('site.principal')}}'>Voltar</a>
     </div>
+    
 @endsection

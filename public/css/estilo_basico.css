@@ -1,5 +1,5 @@
 html, body{
-    background-color: white;
+    background-color: rgb(198, 238, 246);
     height: 100%;
     margin: 0;
 }
@@ -13,7 +13,8 @@ html, body{
 }
 #nav{
     width: 15%;
-    height: 99%;    
+    height: 99%;
+    /*background-color: bisque;  */ 
 }
 
 #div-conteudo{
@@ -26,21 +27,41 @@ html, body{
     height: 25%;
     /*background-color: antiquewhite;*/
     text-align: center;
-
 }
-
 #div-resultados{
     width: 100%;
     height: 74.5%;
-
+    /*background-color: rgb(239, 195, 137);*/
+}
+.menu{
+    margin-top: 50%;
+    font: bold;
+}
+.link-menu{
+    display: block;
+    margin-top: 20px;
+    
 }
 /*-------Fim da estrutura principal--------*/
 
+/*--------Início da Página Home---------*/
 #pesquisa-lista{
     width: 99.7%;
     text-align: center;
+
+}
+/*--------Fim da Página Home---------*/
+
+/*--------Início da Página Minhas listas---------*/
+.listas-importadas{
+    width: 100%;
 }
 
+.minhas-listas{
+    width: 100%;
+}
+
+/*--------Fim da Página Minhas listas---------*/
 a{
     text-decoration: none;
     color: black;
@@ -75,9 +96,10 @@ td{
     width: 100%;
     text-align: center;
 }
-.forms{
+.input-forms{
     width: 50%;
     height: 20px;
+    border-radius: 5px;
 }
 .select{
     width: 42%;

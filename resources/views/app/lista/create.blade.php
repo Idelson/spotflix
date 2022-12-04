@@ -8,8 +8,8 @@
 
         <form method="post" action="{{ route('lista.store') }}">
             @csrf
-            <input class="forms" name="nome" placeholder="Nome da Lista"><br><br>
-            <input class="forms" name="imagem" placeholder="Selecione a imagem"><br><br>
+            <input class="input-forms" name="nome" placeholder="Nome da Lista"><br><br>
+            <input class="input-forms" name="imagem" placeholder="Selecione a imagem"><br><br>
 
             <button type='submit' >Cadastrar</button>
         </form>

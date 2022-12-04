@@ -4,9 +4,9 @@
 
 @section('conteudo')
     
-    <div class='listas-importadas'>
+    <div class='div-listas-importadas'>
         <h3>Listas Importadas</h3>
-        <table border='1' width='80%'>
+        <table border='1' class='listas-importadas'>
             <thead>
                 <tr>
                     <th>Nome</th>
@@ -29,10 +29,10 @@
     </div>
     
 
-    <div class='listas'>
+    <div class='div-minhas-listas'>
         <h3>Minhas Listas</h3>
         
-        <table border='1' width='80%'>
+        <table border='1' class='minhas-listas'>
         
             <thead>
                 <tr>

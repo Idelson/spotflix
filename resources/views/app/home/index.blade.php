@@ -9,13 +9,13 @@
 
         <form method="get" action="{{ route('home.show') }}">
             @csrf
-            <input class="forms" name="nome" placeholder="Nome da Lista">
+            <input class="input-forms" name="nome" placeholder="Nome da Lista">
             <button type='submit' >Pesquisar</button>
         </form>
     
     </div><br><br>
 
-    <table border='1' width='100%'>
+    <table border='1' width='100%' >
 
         <thead>
             <tr>
@@ -43,5 +43,5 @@
         </tbody>
     
     </table>
-    {{-- $clientes->appends($request)->links() --}} <br>
+    {{ $listas->links() }}
 @endsection
