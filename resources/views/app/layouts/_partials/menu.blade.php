@@ -1,4 +1,4 @@
-<menu class="linksrotas">
+<menu class="links-principais">
     <div class="menu">
         <a href="{{ route('home.index') }}">Home</a><br>
         <a href="{{ route('lista.index') }}">Minhas Listas</a><br>

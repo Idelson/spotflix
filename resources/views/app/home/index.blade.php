@@ -43,4 +43,5 @@
         </tbody>
     
     </table>
+    {{-- $clientes->appends($request)->links() --}} <br>
 @endsection
