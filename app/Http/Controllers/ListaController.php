@@ -16,12 +16,13 @@ class ListaController extends Controller
      */
     public function index()
     {
-        //cria o objeto com as listas somente do usuário logado
+        //cria o objeto com as listas criadas pelo usuário logado
         $listas = Lista::orderBy('nome')->paginate(15)->where('user_id', $_SESSION['id']);
 
+        //cria o objeto com listas de outros usuários que o usuário logado marcou para assistir
         $listaUsuarios = ListaUsuario::paginate(15)->where('user_id', $_SESSION['id']);
 
-        //retorna a view e passa o parâmetro retornado da model
+        //retorna a view e passa o parâmetros
         return view('app.lista.index', ['listas' => $listas, 'listaUsuarios' => $listaUsuarios]);
     }
 
@@ -32,7 +33,7 @@ class ListaController extends Controller
      */
     public function create()
     {
-        //Abre view de criar lista
+        //Retorna view com formulário para criar listas
         return view('app.lista.create');
     }
 
@@ -44,11 +45,17 @@ class ListaController extends Controller
      */
     public function store(Request $request)
     {
+        //Instacia o objeto
         $lista = new Lista();
+        //atribui valores aos atributos(no caso, colunas da tabela de listas)
         $lista->nome = $request->get('nome');
         $lista->imagem = $request->get('imagem');
         $lista->user_id = $_SESSION['id'];
+
+        //Salva os valores no banco de dados
         $lista->save();
+
+        //redireciona para página de listas inicial
         return redirect()->route('lista.index');
     }
 
@@ -60,7 +67,7 @@ class ListaController extends Controller
      */
     public function show(Lista $lista)
     {
-        //Abre view de visualização de lista
+        //retorna view de visualização de lista
         return view('app.lista.show', ['lista'=>$lista]);
     }
 
@@ -72,7 +79,7 @@ class ListaController extends Controller
      */
     public function edit(Lista $lista)
     {
-        //abre view do formulário de edição
+        //retorna view do formulário de edição
         return view('app.lista.edit', ['lista'=>$lista]);
     }
 
@@ -88,7 +95,7 @@ class ListaController extends Controller
         //atualiza registro
         $lista->update($request->all());
 
-        //redireciona para minhas listas
+        //redireciona para página minhas listas
         return redirect()->route('lista.index');
     }
 
@@ -106,7 +113,7 @@ class ListaController extends Controller
         //Exclui a lista de todos os usuários
         ListaUsuario::where(['lista_id' => $lista->id])->delete();
 
-        //Exclui a lista
+        //Exclui a lista do banco de dados
         $lista->delete();
 
         //redireciona para minhas listas

@@ -29,7 +29,7 @@ class ListaFilmeController extends Controller
         //Cria objeto com os filmes
         $filmes = Filme::orderBy('titulo')->get();
 
-        //Abre a view para visualização dos filmes por lista
+        //Retorna a view para visualização dos filmes por lista
         return view('app.lista_filme.create', ['lista'=>$lista, 'filmes'=>$filmes]);
     }
 
@@ -56,7 +56,7 @@ class ListaFilmeController extends Controller
      */
     public function show(/*ListaFilme $listaFilme*/Lista $lista)
     {
-        //Abre view visualização de filmes por lista
+        //Retorna view visualização de filmes por lista
         return view('app.lista_filme.show',['lista'=>$lista]);
     }
 
@@ -68,7 +68,7 @@ class ListaFilmeController extends Controller
      */
     public function edit(/*ListaFilme $listaFilme*/Lista $lista)
     {
-        
+        //Retorna view com formulário de edição de filmes na lista
         return view('app.lista_filme.edit', ['lista'=>$lista]);
     }
 
@@ -81,7 +81,7 @@ class ListaFilmeController extends Controller
      */
     public function update(Request $request, /*ListaFilme $listaFilme*/Lista $lista)
     {
-        /*
+        /* Não precisou do update, esta atualização é somente inclusão e exclusão de filmes da lista
         $lista->update($request->all());
         return redirect()->route('lista.index');
         */

@@ -28,7 +28,7 @@
                     <td class='dados'>{{ $filme->duracao }}</td>
                     <td class='dados'>{{ $filme->imagem }}</td>
                     <td class='dados'>{{ $filme->classificacao->descricao == 'Livre' ? $filme->classificacao->descricao : $filme->classificacao->descricao." anos"}}</td>
-                    <td class='dados'><a href="#">Excluir</a></td>
+                    <td class='dados'><a href="{{route('filme.destroy', ['filme'=>$filme->id])}}">Excluir</a></td>
                     <td class='dados'><a href="#">Editar</a></td>
                 </tr>
 

@@ -36,10 +36,14 @@ class ListaUsuarioController extends Controller
      */
     public function store(Request $request, Lista $lista)
     {
-
+        //Instancia o objeto
         $listaUsuario = new ListaUsuario();
+
+        //atribui valores aos atributos da tabela lista_usuarios
         $listaUsuario->user_id = $_SESSION['id'];
         $listaUsuario->lista_id = $lista->id;
+
+        //Salva os dados do formulário no banco de dados
         $listaUsuario->save();
 
         //Redireciona para minhas listas
@@ -88,9 +92,7 @@ class ListaUsuarioController extends Controller
      */
     public function destroy(ListaUsuario $listaUsuario)
     {
-        /*echo "<pre>";
-        print_r($listaUsuario->id);
-        echo "</pre>";*/
+        //Exclui listas da tabela lista_usuarios, apaga uma lista que o usuario logado marcou para assistir
         $listaUsuario->delete();
 
         //redireciona para minhas listas

@@ -24,6 +24,7 @@ class LoginController extends Controller
     }
 
     public function autenticar(Request $request){
+        
         // regras de validação dos campos no formulário
         $regras = ['usuario'=>'email', 'senha'=>'required'];
 

@@ -43,6 +43,8 @@ Route::middleware('autenticacao')->prefix('/app')->group(function(){
     Route::get('/meuperfil', [MeuPerfilController::class, 'index'])->name('app.meuperfil');
     
 
+
+    //--------------------------------------Rotas lista-filme-----------------------------------------
     Route::get('/lista-filme/create/{lista}', [ListaFilmeController::class, 'create'])->name('lista-filme.create');
     Route::post('/lista-filme/store/{lista}', [ListaFilmeController::class, 'store'])->name('lista-filme.store');
     Route::get('/lista-filme/show/{lista}', [ListaFilmeController::class, 'show'])->name('lista-filme.show');
@@ -50,13 +52,19 @@ Route::middleware('autenticacao')->prefix('/app')->group(function(){
     Route::delete('/lista-filme/destroy/{listaFilme}/{lista_id}', [ListaFilmeController::class, 'destroy'])->name('lista-filme.destroy');
     
 
+    //--------------------------------------Rotas lista-usuarios-----------------------------------------
     Route::get('/lista-usuario/store/{lista}', [ListaUsuarioController::class, 'store'])->name('lista-usuario.store');
     Route::get('/lista-usuario/destroy/{listaUsuario}', [ListaUsuarioController::class, 'destroy'])->name('lista-usuario.destroy');
 
+    //--------------------------------------Rotas filmes-----------------------------------------
+    /*Route::resource('filme', FilmeController::class);*/
+    Route::get('filme', [FilmeController::class, 'index'])->name('filme.index');
+    Route::get('filme/create', [FilmeController::class, 'create'])->name('filme.create');
+    Route::post('filme/store/{filme}', [FilmeController::class, 'store'])->name('filme.store');
+    Route::get('filme/destroy/{filme}', [FilmeController::class, 'destroy'])->name('filme.destroy');
 
-    Route::resource('filme', FilmeController::class);
 
-
+    //--------------------------------------Rotas listas-----------------------------------------
     //Route::resource('lista', ListaController::class);
     Route::get('lista', [ListaController::class, 'index'])->name('lista.index');
     Route::get('lista/create', [ListaController::class, 'create'])->name('lista.create');

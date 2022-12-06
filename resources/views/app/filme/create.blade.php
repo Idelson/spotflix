@@ -16,14 +16,14 @@
             <select name="classificacoe_id" class="select">
                 <option>-- Selecione a Classificação --</option>
                 @foreach ($classificacoes as $classificacao)
-                    <option name="option" value="{{ $classificacao->id }}">{{ $classificacao->descricao }}</option>
+                    <option name="option" value="{{ $classificacao->id }}">{{ $classificacao->descricao.' - anos'}}</option>
                 @endforeach
                 
             </select>  
 
             <button type='submit' >Cadastrar</button>
-        </form>
-    
+        </form><br><br>
+        <a href="{{ route('filme.index')}}">Voltar</a>
     </div>
 
 
