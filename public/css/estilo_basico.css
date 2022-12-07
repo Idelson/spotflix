@@ -1,124 +1,168 @@
-html, body{
-    background-color: rgb(198, 238, 246);
-    height: 100%;
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+html,
+body {
     margin: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+/*--------botoes--------*/
+
+#span {
+    font-weight: bold;
+}
+
+#texto-btn {
+    margin-top: 20px;
+}
+
+#btn {
+    background-color: #fc4552;
+    color: #fff;
+    padding: 11px 33px;
+    border-radius: 31px;
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+#btn-line {
+    background-color: transparent;
+    color: #fff;
+    text-decoration: underline;
+    font-size: 20px;
+    margin-right: 24px;
+}
+/*--------end-botoes--------*/
+
+#corpo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background: #343434
+        url("https://1.bp.blogspot.com/-GjKJGwrzoJc/YPgn-T_sUsI/AAAAAAAAasg/dlyt5q9lnyET10yhD9jcEdzZiuWGjZAjQCLcBGAsYHQ/s1170/netflix-servico-distribuicao-jogos-mobile.jpg")
+        no-repeat;
+    background-size: cover;
+}
+
+#img-fundo {
+    background-color: #0e0e0edb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+#titulo {
+    font-size: 40px;
+    font-family: "Poppins", sans-serif;
+    color: #ffffff;
+    font-weight: 700;
+    color: #fc4552;
+}
+
+#p {
+    color: #fff;
+    width: 900px;
 }
 
 /*--------Início da estrutura principal--------*/
-#total{
+#total {
     height: 100%;
     width: 100%;
     display: flex;
     justify-content: center;
 }
-#nav{
+#nav {
     width: 15%;
     height: 99%;
-    /*background-color: bisque;  */ 
+    /*background-color: bisque;  */
 }
 
-#div-conteudo{
+#div-conteudo {
     height: 99%;
-    width: 60%;  
+    width: 60%;
 }
 
-#div-titulo{
+#div-titulo {
     width: 100%;
     height: 25%;
     /*background-color: antiquewhite;*/
     text-align: center;
 }
-#div-resultados{
+#div-resultados {
     width: 100%;
     height: 74.5%;
     /*background-color: rgb(239, 195, 137);*/
 }
-.menu{
+.menu {
     margin-top: 50%;
     font: bold;
 }
-.link-menu{
+.link-menu {
     display: block;
     margin-top: 20px;
-    
 }
 /*-------Fim da estrutura principal--------*/
 
-
-
 /*--------Início da Página Home---------*/
-#pesquisa-lista{
+#pesquisa-lista {
     width: 99.7%;
     text-align: center;
-
 }
 /*--------Fim da Página Home---------*/
 
-
-
 /*--------Início da Página Minhas listas---------*/
-.listas-importadas{
+.listas-importadas {
     width: 100%;
 }
 
-.minhas-listas{
+.minhas-listas {
     width: 100%;
 }
 
 /*--------Fim da Página Minhas listas---------*/
 
-
-
 /*--------Início da Página Principal---------*/
-#div-conteudo-pagina-principal{
+#div-conteudo-pagina-principal {
     text-align: center;
 }
 /*--------Fim da Página Principal---------*/
 
-
-
-a{
-    text-decoration: none;
+h1 {
     color: black;
 }
-
-h1{
-    color: black;
-}
-.div_formulario{
+.div_formulario {
     width: 30%;
     border: 2px solid black;
     border-radius: 15px;
     text-align: center;
     margin: auto;
 }
-.img_primaria{
-    width:50%;
-    border-radius: 10px;
-    /*margin: auto;*/
-    
-}
-#filme_todos{
+
+#filme_todos {
     border: 1px solid black;
     width: 100%;
 }
-td{
+td {
     border: 1px solid black;
 }
-.dados{
+.dados {
     text-align: center;
 }
-#cadastro-filme{
+#cadastro-filme {
     width: 100%;
     text-align: center;
 }
-.input-forms{
+.input-forms {
     width: 50%;
     height: 20px;
     border-radius: 5px;
 }
-.select{
+.select {
     width: 42%;
     height: 20px;
 }
-
