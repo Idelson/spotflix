@@ -60,7 +60,7 @@ Route::middleware('autenticacao')->prefix('/app')->group(function(){
     /*Route::resource('filme', FilmeController::class);*/
     Route::get('filme', [FilmeController::class, 'index'])->name('filme.index');
     Route::get('filme/create', [FilmeController::class, 'create'])->name('filme.create');
-    Route::post('filme/store/{filme}', [FilmeController::class, 'store'])->name('filme.store');
+    Route::post('filme/store/', [FilmeController::class, 'store'])->name('filme.store');
     Route::get('filme/destroy/{filme}', [FilmeController::class, 'destroy'])->name('filme.destroy');
 
 
