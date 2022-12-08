@@ -120,7 +120,7 @@ input.input_form_login {
     align-items: flex-start;
 }
 
-form {
+#form-cad {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -158,22 +158,35 @@ button.bot {
     background-color: #444444;
 }
 #nav {
-    width: 250px;
+    width: 333px;
     height: 100vh;
     background-color: #000;
 }
 
 #div-conteudo {
-    height: 99%;
-    width: 60%;
+    height: 100vh;
+    width: 100vw;
 }
 
+#icone-flutuante {
+    background: #fc4552;
+    display: flex;
+    position: fixed;
+    border-radius: 37px;
+    padding: 20px;
+    color: #fff;
+    bottom: 60px;
+    right: 32px;
+    cursor: pointer;
+}
+/*
 #div-titulo {
     width: 100%;
     height: 25%;
-    /*background-color: antiquewhite;*/
+    background-color: antiquewhite;
     text-align: center;
-}
+}*/
+
 #div-resultados {
     width: 100%;
     height: 74.5%;
@@ -221,8 +234,25 @@ button.bot {
 
 /*--------Início da Página Home---------*/
 #pesquisa-lista {
-    width: 99.7%;
-    text-align: center;
+    background: #7FA372;
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding-top: 30px;
+    justify-content: center;
+}
+
+.btn-lupa {
+    border: none;
+    background-color: #fff;
+    cursor: pointer;
+    border-radius:20px;
+    margin-left: -37px;
+}
+
+input.input-forms {
+    padding-left: 20px;
 }
 /*--------Fim da Página Home---------*/
 
@@ -262,9 +292,10 @@ td {
     text-align: center;
 }
 .input-forms {
-    width: 50%;
-    height: 20px;
-    border-radius: 5px;
+    width: 500px;
+    height: 33px;
+    border-radius: 25px;
+    border: none;
 }
 .select {
     width: 42%;
