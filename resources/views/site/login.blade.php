@@ -12,7 +12,7 @@
             @csrf
 
             <div id='form-input'>
-            <label>Usuário</label>
+            <label>E-mail</label>
             <input name='usuario' value='{{ old('usuario') }}' type='text' class='input_form_login'>
             {{ $errors->has('usuario') ? $errors->first('usuario') : '' }}
             </div>

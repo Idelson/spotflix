@@ -1,7 +1,5 @@
 @extends('app.layouts.basico')
 
-@section('titulo', 'Home')
-
 @section('conteudo')
 
 
@@ -12,7 +10,7 @@
             <input class="input-forms" name="nome" placeholder="Nome da Lista">
             <button type='submit' >Pesquisar</button>
         </form>
-    
+
     </div><br><br>
 
     <table border='1' width='100%' >
@@ -31,7 +29,7 @@
                     <td>{{ $lista->imagem }}</td>
                     <td>{{ $lista->nome }}</td>
                     <td><a href="{{ route('lista.show', ['lista' => $lista->id]) }}">Visualizar</a></td>
-                    
+
                     @if ($lista->user_id == $_SESSION['id'] || count($listaUsuarios->where('lista_id', $lista->id)->where('user_id', $_SESSION['id'])) != 0)
                         <td>Já incluso em Minhas Listas</td>
                     @else
@@ -41,7 +39,7 @@
 
             @endforeach
         </tbody>
-    
+
     </table>
     {{ $listas->links() }}
 @endsection
