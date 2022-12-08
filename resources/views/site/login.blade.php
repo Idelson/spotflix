@@ -8,11 +8,11 @@
 
     <div id='cad_usuario'>Spotflix</div>
     <p id='sub-title'>Para continuar faça login no seu Spotflix.</p>
-        <form action={{ route('site.login') }} method="post" ><!--//caso não funcione, csrf_field(), entre 2 chaves-->
+        <form id='form-cad' action={{ route('site.login') }} method="post" ><!--//caso não funcione, csrf_field(), entre 2 chaves-->
             @csrf
 
             <div id='form-input'>
-            <label>Usuário</label>
+            <label>E-mail</label>
             <input name='usuario' value='{{ old('usuario') }}' type='text' class='input_form_login'>
             {{ $errors->has('usuario') ? $errors->first('usuario') : '' }}
             </div>

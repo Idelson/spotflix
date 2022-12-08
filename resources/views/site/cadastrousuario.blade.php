@@ -8,7 +8,7 @@
 
     <div id='cad_usuario'>Spotflix</div>
     <p id='sub-title'>Inscreva-se grátis!</p>
-        <form action={{ route('site.cadastro') }} method="post" ><!--//caso não funcione, csrf_field(), entre 2 chaves-->
+        <form id='form-cad'action={{ route('site.cadastro') }} method="post" ><!--//caso não funcione, csrf_field(), entre 2 chaves-->
             @csrf
 
             <div id='form-input'>
