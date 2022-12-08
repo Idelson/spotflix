@@ -127,7 +127,7 @@ class ListaController extends Controller
         //Exclui a lista de todos os usuários
         ListaUsuario::where(['lista_id' => $lista->id])->delete();
 
-       
+        //Exclui arquivo de imagem do storage
         Storage::disk('public')->delete("img/listas/$lista->imagem");
         
         //Exclui a lista do banco de dados

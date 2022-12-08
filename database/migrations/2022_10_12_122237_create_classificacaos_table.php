@@ -13,11 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
+        //Cria a tabela de classificações
         Schema::create('classificacoes', function (Blueprint $table) {
             $table->id();
             $table->string('descricao',20);
             $table->timestamps();
-            $table->softDeletes();
+            $table->softDeletes(); //Exclusão lógica
         });
     }
 
@@ -28,6 +29,7 @@ return new class extends Migration
      */
     public function down()
     {
+        //Excluir a tabela
         Schema::dropIfExists('classificacoes');
     }
 };

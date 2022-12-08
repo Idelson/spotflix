@@ -13,6 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
+        //Cria tabela log_acessos
         Schema::create('log_acessos', function (Blueprint $table) {
             $table->id();
             $table->string('log', 200);
@@ -27,6 +28,7 @@ return new class extends Migration
      */
     public function down()
     {
+        //Exclui tabela log_acessos
         Schema::dropIfExists('log_acessos');
     }
 };

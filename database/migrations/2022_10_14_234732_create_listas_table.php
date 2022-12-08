@@ -13,6 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
+        //Cria tabela listas
         Schema::create('listas', function (Blueprint $table) {
             $table->id();
             $table->string('nome', 50);
@@ -20,9 +21,11 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->timestamps();
 
+            //Cria chave estrangeira
             $table->foreign('user_id')->references('id')->on('users');
         });
 
+        //Cria tabela lista_filmes
         Schema::create('lista_filmes', function(blueprint $table){
             $table->id();
             $table->unsignedBigInteger('filme_id');
@@ -30,6 +33,7 @@ return new class extends Migration
             $table->string('status', 45);
             $table->timestamps();
 
+            //Cria chave estrangeira
             $table->foreign('filme_id')->references('id')->on('filmes');
             $table->foreign('lista_id')->references('id')->on('listas');
         });
@@ -44,6 +48,7 @@ return new class extends Migration
      */
     public function down()
     {
+        //Exclui tabelas
         Schema::dropIfExists('lista_filmes');
         Schema::dropIfExists('listas');
     }
