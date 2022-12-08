@@ -32,7 +32,7 @@
             <tr>
                 <td>
                     @if ($lista->imagem)
-                        <img src='{{ url("img/$lista->imagem") }}' alt='{{$lista->nome}}'></img>
+                        <img src="{{ url("img/listas/$lista->imagem") }}" alt='' width='30px'>
                     @endif
                     
                 </td>

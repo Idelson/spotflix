@@ -62,9 +62,9 @@ class ListaController extends Controller
 
             $requestImagem = $request->imagem;
             $extension = $requestImagem->extension();
-            $nomeImagem = md5($requestImagem->imagem->getClientOriginalName().strtotime('now').'.'.$extension);
+            $nomeImagem = md5($requestImagem->getClientOriginalName().strtotime('now').'.'.$extension);
             //salvar imagem no servidor
-            $request->imagem->move(public_path('img/lista'), $nomeImagem);
+            $request->imagem->move(public_path('img/listas'), $nomeImagem);
             $lista->imagem = $nomeImagem;
         }
 
