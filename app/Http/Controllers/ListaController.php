@@ -49,8 +49,24 @@ class ListaController extends Controller
         $lista = new Lista();
         //atribui valores aos atributos(no caso, colunas da tabela de listas)
         $lista->nome = $request->get('nome');
-        $lista->imagem = $request->get('imagem');
+        //$lista->imagem = $request->get('imagem');
         $lista->user_id = $_SESSION['id'];
+
+        //Upload da imagem
+        //hasFile verifica se tem um arquivo na requisição vindo do input image
+        //isvalid verifica se o arquivo é válido
+        if($request->hasFile('imagem') && $request->file('imagem')->isvalid()){
+
+            /*$caminhoImagem = $request->image->store('img');
+            $data['imagem'] = $caminhoImagem;*/
+
+            $requestImagem = $request->imagem;
+            $extension = $requestImagem->extension();
+            $nomeImagem = md5($requestImagem->imagem->getClientOriginalName().strtotime('now').'.'.$extension);
+            //salvar imagem no servidor
+            $request->imagem->move(public_path('img/lista'), $nomeImagem);
+            $lista->imagem = $nomeImagem;
+        }
 
         //Salva os valores no banco de dados
         $lista->save();

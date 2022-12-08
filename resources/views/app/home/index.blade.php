@@ -28,7 +28,12 @@
         <tbody>
             @foreach ($listas as $lista)
                 <tr>
-                    <td>{{ $lista->imagem }}</td>
+                    <td>
+                        @if ($lista->imagem)
+                            <img src='{{ url("img/$lista->imagem") }}' alt='{{$lista->nome}}'></img>
+                        @endif
+                        
+                    </td>
                     <td>{{ $lista->nome }}</td>
                     <td><a href="{{ route('lista.show', ['lista' => $lista->id]) }}">Visualizar</a></td>
                     
