@@ -3,21 +3,29 @@
 @section('titulo', $titulo)
 
 @section('conteudo')
-    <br><br><br><br>
-    
+
     <div class='div_formulario'>
-    
-    <h1 id='login'>Login</h1>
+
+    <div id='cad_usuario'>Spotflix</div>
+    <p id='sub-title'>Para continuar faça login no seu Spotflix.</p>
         <form action={{ route('site.login') }} method="post" ><!--//caso não funcione, csrf_field(), entre 2 chaves-->
             @csrf
-            <input name='usuario' value='{{ old('usuario') }}' type='text' placeholder='Usuário' class='input_form_login'><br>
-            {{ $errors->has('usuario') ? $errors->first('usuario') : '' }}<br>
-            <input name='senha' value='{{-- old('senha') --}}' type='password' placeholder='Senha' class='input_form_login'><br>
-            {{ $errors->has('senha') ? $errors->first('senha') : '' }}<br>
+
+            <div id='form-input'>
+            <label>Usuário</label>
+            <input name='usuario' value='{{ old('usuario') }}' type='text' class='input_form_login'>
+            {{ $errors->has('usuario') ? $errors->first('usuario') : '' }}
+            </div>
+
+            <div id='form-input'>
+            <label>Senha</label>
+            <input name='senha' value='{{-- old('senha') --}}' type='password' class='input_form_login'>
+            {{ $errors->has('senha') ? $errors->first('senha') : '' }}
+            </div>
             <button type='submit' class='bot'>Acessar</button>
-        </form><br>
+        </form>
         {{ isset($erro) && $erro != "" ? $erro : '' }}
-        <a href='{{route('site.principal')}}'>Voltar</a>
+        <a id='btn-line' href='{{route('site.principal')}}'>Voltar</a>
     </div>
-    
+
 @endsection
