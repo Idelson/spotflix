@@ -46,7 +46,11 @@
             
                 @foreach ($listas as $lista)
                     <tr>
-                        <td>{{ $lista->imagem }}</td>
+                        <td>
+                            @if ($lista->imagem)
+                                <img src='{{ url("storage/img/listas/$lista->imagem") }}' alt='' width='30px' height='30px'>
+                            @endif
+                        </td>
                         <td>{{ $lista->nome }}</td>
                         <td><a href="{{ route('lista-filme.show', ['lista' => $lista->id]) }}">Visualizar</a></td>
                         <td><a href="{{ route('lista-filme.create', ['lista' => $lista->id]) }}">Adicionar Filme</a></td>
@@ -60,5 +64,5 @@
         
         </table>
     </div>
-
+    
 @endsection

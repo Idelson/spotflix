@@ -13,6 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
+        //Cria tabela plataformas
         Schema::create('plataformas', function (Blueprint $table) {
             $table->id();
             $table->string('descricao', 20);
@@ -28,6 +29,7 @@ return new class extends Migration
      */
     public function down()
     {
+        //Exclui tabela plataformas
         Schema::dropIfExists('plataformas');
     }
 };

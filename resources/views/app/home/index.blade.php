@@ -1,5 +1,7 @@
 @extends('app.layouts.basico')
 
+@section('titulo', 'Home')
+
 @section('conteudo')
 
 <div id='corpo-home'>
@@ -30,12 +32,17 @@
                 </tr>
             </thead>
 
-            <tbody>
-                @foreach ($listas as $lista)
-                <tr>
-                    <td>{{ $lista->imagem }}</td>
-                    <td>{{ $lista->nome }}</td>
-                    <td><a href="{{ route('lista.show', ['lista' => $lista->id]) }}">Visualizar</a></td>
+        <tbody>
+            @foreach ($listas as $lista)
+            <tr>
+                <td>
+                    @if ($lista->imagem)
+                        <img src="{{ url("storage/img/listas/$lista->imagem") }}" alt='' width='30px' height='30px'>
+                    @endif
+
+                </td>
+                <td>{{ $lista->nome }}</td>
+                <td><a href="{{ route('lista.show', ['lista' => $lista->id]) }}">Visualizar</a></td>
 
                     @if ($lista->user_id == $_SESSION['id'] || count($listaUsuarios->where('lista_id',
                     $lista->id)->where('user_id', $_SESSION['id'])) != 0)

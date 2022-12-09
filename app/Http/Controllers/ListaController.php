@@ -6,6 +6,7 @@ use App\Models\Lista;
 use App\Models\ListaFilme;
 use App\Models\ListaUsuario;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ListaController extends Controller
 {
@@ -49,12 +50,25 @@ class ListaController extends Controller
         $lista = new Lista();
         //atribui valores aos atributos(no caso, colunas da tabela de listas)
         $lista->nome = $request->get('nome');
-        $lista->imagem = $request->get('imagem');
+        //$lista->imagem = $request->get('imagem');
         $lista->user_id = $_SESSION['id'];
+
+        //Upload da imagem
+        //hasFile verifica se tem um arquivo na requisição vindo do input image
+        //isvalid verifica se o arquivo é válido
+        if($request->hasFile('imagem') && $request->file('imagem')->isvalid()){
+
+            $requestImagem = $request->imagem;
+            $extension = $requestImagem->extension();
+            $nomeImagem = md5($requestImagem->getClientOriginalName().strtotime('now').'.'.$extension);
+            //salvar imagem no servidor
+            $request->imagem->move(storage_path('app/public/img/listas'), $nomeImagem);
+            $lista->imagem = $nomeImagem;
+        }
 
         //Salva os valores no banco de dados
         $lista->save();
-
+        
         //redireciona para página de listas inicial
         return redirect()->route('lista.index');
     }
@@ -113,9 +127,12 @@ class ListaController extends Controller
         //Exclui a lista de todos os usuários
         ListaUsuario::where(['lista_id' => $lista->id])->delete();
 
+        //Exclui arquivo de imagem do storage
+        Storage::disk('public')->delete("img/listas/$lista->imagem");
+        
         //Exclui a lista do banco de dados
         $lista->delete();
-
+        
         //redireciona para minhas listas
         return redirect()->route('lista.index');
     }
