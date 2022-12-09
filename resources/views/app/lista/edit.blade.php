@@ -4,16 +4,14 @@
 
 @section('conteudo')
 
-    <p><a href="{{ route('lista.index') }}">Voltar</a></p>
-
     <div id="cadastro-lista">
         <form method="post" action="{{ route('lista.update',['lista'=>$lista->id]) }}" enctype='multipart/form-data'>
             @method('PUT')
             @csrf
-            <input class="forms" name="nome" value='{{ $lista->nome }}' placeholder="Nome da Lista"><br><br>
-            <!--input class="forms" name="imagem" value='{{-- $lista->imagem --}}' type="file"--><br><br>
+            <input class="input-forms edit-input" name="nome" value='{{ $lista->nome }}' placeholder="Nome da Lista"><br>
+            <!--input class="forms" name="imagem" value='{{-- $lista->imagem --}}' type="file"-->
 
-            <button type='submit' >Editar</button>
+            <button id='btn-cadastro' type='submit'>Salvar</button>
         </form>
     </div>
 
