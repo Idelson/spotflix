@@ -283,6 +283,13 @@ h1 {
 }
 td {
     border: 1px solid black;
+    color:white;
+}
+th{
+    color:white;
+}
+a{
+    color:rgb(184, 181, 181);
 }
 .dados {
     text-align: center;
