@@ -9,7 +9,7 @@
 
         <form method="get" action="{{ route('home.show') }}">
             @csrf
-            <input class="forms" name="nome" placeholder="Nome da Lista">
+            <input class="input-forms" name="nome" placeholder="Nome da Lista">
             <button type='submit' >Pesquisar</button>
         </form>
     
