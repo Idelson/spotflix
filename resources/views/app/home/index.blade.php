@@ -26,7 +26,8 @@
         <a href="{{ route('lista.show', ['lista' => $lista->id]) }}">
             <div class="card-film">
                 @if ($lista->imagem)
-                <img src='/img/img-padrao.png' alt='' class="img">
+                <!--<img src='/img/img-padrao.png' alt='' class="img">-->
+                <img src="{{ url("storage/img/listas/$lista->imagem") }}" alt='' class="img">
                 @endif
 
                 <p class="nome-lista">{{ $lista->nome }}</p>
