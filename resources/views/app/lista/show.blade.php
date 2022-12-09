@@ -1,36 +1,42 @@
 @extends('app.layouts.basico')
 
-@section('titulo', 'Visualização')
-
 @section('conteudo')
 
-    <div id="cadastro-lista">
-        <h4>Detalhes da Lista</h4>
-        <p>Nome da Lista: <strong>{{"$lista->nome"}}</strong></p>
-    </div>
-    
-    <p><a href="{{ route('home.index') }}">Voltar</a></p>
-    <div>
-        <table border='1'>
-            <thead>
-                <tr>
-                    <th>Título</th>
-                    <th>Ano</th>
-                    <th>Duração</th>
-                </tr>
-            </thead>
-            <tbody>
-               
-                @foreach ($lista->filmes as $filme)
-                    <tr>
-                        <td>{{ $filme->titulo }}</td>
-                        <td>{{ $filme->ano }}</td>
-                        <td>{{ $filme->duracao }}</td>
-                    </tr>
-                @endforeach              
-            </tbody>
-        </table>
-    </div>
+<div id="cabecalho-visu">
+    <img src='/img/img-padrao.png' alt='' class="img-visializacao">
+    <p id='texto-visu'>{{"$lista->nome"}}</p>
+</div>
+
+<div class="lista-completa">
+    @foreach ($lista->filmes as $filme)
+    <div class="titulo"> {{ $filme->titulo }}</div>
+    <div class="ano">Ano: {{ $filme->ano }}</div>
+    <div class="duracao ">Duração: {{ $filme->duracao }}</div>
+    @endforeach
+</div>
+
+
+<!--<div>
+    <table border='1'>
+        <thead>
+            <tr>
+                <th>Título</th>
+                <th>Ano</th>
+                <th>Duração</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach ($lista->filmes as $filme)
+            <tr>
+                <td>{{ $filme->titulo }}</td>
+                <td>{{ $filme->ano }}</td>
+                <td>{{ $filme->duracao }}</td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
+</div>-->
 
 
 

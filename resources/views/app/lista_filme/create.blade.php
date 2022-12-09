@@ -3,12 +3,12 @@
 @section('titulo', 'Lista e Filmes')
 
 @section('conteudo')
-    
+
     <div id="cadastro-lista">
         <h4>Detalhes da Lista</h4>
         <p>Nome da Lista: <strong>{{$lista->nome}}</strong></p>
     </div>
-    
+
     <p><a href="{{ route('lista.index') }}">Voltar</a></p>
     <div>
         <table border='1'>
@@ -21,14 +21,14 @@
                 </tr>
             </thead>
             <tbody>
-               
+
                 @foreach ($lista->filmes as $filme)
                     <tr>
                         <td>{{ $filme->titulo }}</td>
                         <td>{{ $filme->ano }}</td>
                         <td>{{ $filme->duracao }}</td>
                         <td>
-                            
+
                             <form id='form_{{$filme->pivot->id}}' method='post' action="{{ route('lista-filme.destroy', ['listaFilme'=>$filme->pivot->id, 'lista_id'=>$lista->id])}}">
                                 @method('DELETE')
                                 @csrf
@@ -36,11 +36,11 @@
                             </form>
                         </td>
                     </tr>
-                @endforeach              
+                @endforeach
             </tbody>
         </table>
     </div><br>
-    
+
     <div>
         <form method="post" action="{{ route('lista-filme.store', ['lista'=>$lista->id]) }}">
             @csrf
@@ -50,7 +50,7 @@
                     <option value='{{ $filme->id }} '>{{ $filme->titulo }}</option>
                 @endforeach
             </select>
-            
+
             <button type="submit" id='bt'>Incluir Filme</button>
         </form>
     </div>
