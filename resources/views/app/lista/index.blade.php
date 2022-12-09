@@ -5,7 +5,7 @@
 @section('conteudo')
 
 <div id="cabecalho-padrao">
-    <p id='texto-cabe'>Olá, essas são todas as suas <br>listfilmes</p>
+    <p id='texto-cabe'>Olá {{$_SESSION['name']}}, essas são todas as suas <br>listfilmes.</p>
 </div>
 <!--------------------------------------------------------------------------------->
 
