@@ -9,7 +9,7 @@
 </div>
 <!--------------------------------------------------------------------------------->
 
-<div class="title-page"> Listas Importadas</div>
+<div class="title-page"> Listas que você curtiu</div>
 
 <div class="grid">
     @foreach ($listaUsuarios as $listaUsuario)
@@ -20,7 +20,7 @@
             @php $nImg = $listaUsuario->lista->imagem @endphp
             <img src='{{ url("storage/img/listas/$nImg") }}' alt='' class="img">
         @endif
-        
+
         <a href="{{ route('lista.show', ['lista' => $listaUsuario->lista->id]) }}">
             <p class="nome-lista-visu">{{ $listaUsuario->lista->nome }}</p>
         </a>
@@ -49,7 +49,7 @@
         @if ($lista->imagem)
         <!--<img src='/img/img-padrao.png' alt='' class="img">-->
         <img src='{{ url("storage/img/listas/$lista->imagem") }}' alt='' class="img">
-        
+
         @endif
         <a href="{{ route('lista.show', ['lista' => $lista->id]) }}">
             <p class="nome-lista-visu">{{ $lista->nome }}</p>
