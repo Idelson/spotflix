@@ -1,5 +1,7 @@
 @extends('app.layouts.basico')
 
+@section('titulo', 'Visualiza Lista')
+
 @section('conteudo')
 
 <div id="cabecalho-visu">
@@ -16,7 +18,8 @@
 </div>
 @endforeach
 <div>
-    <a id='icone-flutuante' href="{{ route('lista-filme.create', ['lista' => $lista->id]) }}">
+    <!--<a id='icone-flutuante' href="{{ route('lista-filme.create', ['lista' => $lista->id]) }}">-->
+    <a id='icone-flutuante' href="{{ route('lista-usuario.store', ['lista' => $lista->id]) }}">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
             class="bi bi-plus-square-fill" viewBox="0 0 16 16">
             <path
