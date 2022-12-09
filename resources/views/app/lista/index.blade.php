@@ -17,7 +17,8 @@
     <div class="card-film-lista ">
         @if ($listaUsuario->lista->imagem)
             <!--<img src='/img/img-padrao.png' alt='' class="img">-->
-            <img src='{{ url("storage/img/listas/$listaUsuario->lista->imagem") }}' alt='' class="img">
+            @php $nImg = $listaUsuario->lista->imagem @endphp
+            <img src='{{ url("storage/img/listas/$nImg") }}' alt='' class="img">
         @endif
         
         <a href="{{ route('lista.show', ['lista' => $listaUsuario->lista->id]) }}">
