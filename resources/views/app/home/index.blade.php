@@ -21,7 +21,7 @@
 
     </div>
 
-    <div class="title-page"> Minhas listas</div>
+    <div class="title-page"> Listas para Conhecer</div>
 
     <div class="grid">
         @foreach ($listas as $lista)
@@ -91,5 +91,5 @@
     </div>-->
 
 </div>
-{{ $listas->links() }}
+{{-- $listas->links() --}}
 @endsection

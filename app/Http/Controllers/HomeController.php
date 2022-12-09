@@ -11,7 +11,7 @@ class HomeController extends Controller
     public function index(Request $request){
         
         //cria o objeto com todas as listas
-        $listas = Lista::orderBy('nome')->paginate(10);
+        $listas = Lista::orderBy('nome')->paginate(10)->where('user_id', '!=', $_SESSION['id']);
 
         //cria o objeto de listas por usuários
         $listaUsuarios = ListaUsuario::all();

@@ -252,8 +252,11 @@ a{
     color: #fff;
 }
 
-.img{
-    height: 100px;
+.img {
+    min-height: 100px;
+    /* max-width: 100px; */
+    width: 100px;
+    height: auto;
     border-radius: 20px 0px 0px 20px;
 }
 

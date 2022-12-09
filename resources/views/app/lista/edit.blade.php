@@ -11,7 +11,7 @@
             @method('PUT')
             @csrf
             <input class="forms" name="nome" value='{{ $lista->nome }}' placeholder="Nome da Lista"><br><br>
-            <input class="forms" name="imagem" value='{{-- $lista->imagem --}}' type="file"><br><br>
+            <!--input class="forms" name="imagem" value='{{-- $lista->imagem --}}' type="file"--><br><br>
 
             <button type='submit' >Editar</button>
         </form>
