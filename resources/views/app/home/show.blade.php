@@ -1,21 +1,41 @@
 @extends('app.layouts.basico')
 
-@section('titulo', 'Home')
-
 @section('conteudo')
 
 
-    <div id="pesquisa-lista">
+<div id="pesquisa-lista">
 
-        <form method="get" action="{{ route('home.show') }}">
-            @csrf
-            <input class="input-forms" name="nome" placeholder="Nome da Lista">
-            <button type='submit' >Pesquisar</button>
-        </form>
+<form id='form-pesquisa' method="get" action="{{ route('home.show') }}">
+    @csrf
+    <input class="input-forms" name="nome" placeholder="Nome da Lista">
+    <button class="btn-lupa" type='submit'>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
+            viewBox="0 0 16 16">
+            <path
+                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+        </svg>
+    </button>
+</form>
 
-    </div><br><br>
+</div>
 
-    <table border='1' width='100%'>
+    <div class="title-page"> Resultado da pesquisa</div>
+
+    <div class="grid">
+        @foreach ($listas as $lista)
+        <a href="{{ route('lista.show', ['lista' => $lista->id]) }}">
+        <div class="card-film">
+            @if ($lista->imagem)
+            <img src='/img/img-padrao.png' alt='' class="img">
+            @endif
+
+            <p class="nome-lista">{{ $lista->nome }}</p>
+        </div>
+        </a>
+        @endforeach
+    </div>
+
+    <!--<table border='1' width='100%'>
         <thead>
             <tr>
                 <th>Imagem</th>
@@ -65,5 +85,5 @@
 
         </tbody>
 
-    </table>
+    </table>-->
 @endsection
