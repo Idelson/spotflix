@@ -12,7 +12,6 @@
         <div id="nav">@include('app.layouts._partials.menu')</div>
             
             <div id="div-conteudo">
-                <div id="div-titulo">@yield('titulo')</div>
                 <div id="div-resultados">
                     @yield('conteudo')
                 </div>
