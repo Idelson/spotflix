@@ -189,7 +189,7 @@ button.bot {
     margin-left: 27px;
     margin-top: 20px;
     display: grid;
-    grid-template-columns: 400px 400px 400px 400px;
+    grid-template-columns: 400px 400px 400px;
     justify-content: start;
     justify-items: start;
 }
@@ -316,6 +316,34 @@ a{
 .duracao {
     border-bottom: 0.5px solid hsl(0deg 3% 30%);
     padding-bottom: 20px;
+}
+
+.add-filme {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+select {
+    border: none;
+    width: 400px;
+    height: 44px;
+    border-radius: 20px;
+    padding: 10px;
+    margin-left: 60px;
+    margin-top: 20px;
+}
+
+button#bt {
+    background: transparent;
+    border: 0.5px solid #fff;
+    width: 161px;
+    height: 48px;
+    border-radius: 66px;
+    color: #fff;
+    font-weight: 900;
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
 }
 
 
