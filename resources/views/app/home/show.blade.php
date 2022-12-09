@@ -4,15 +4,15 @@
 
 @section('conteudo')
 
-    
+
     <div id="pesquisa-lista">
 
         <form method="get" action="{{ route('home.show') }}">
             @csrf
-            <input class="forms" name="nome" placeholder="Nome da Lista">
+            <input class="input-forms" name="nome" placeholder="Nome da Lista">
             <button type='submit' >Pesquisar</button>
         </form>
-    
+
     </div><br><br>
 
     <table border='1' width='100%'>
@@ -57,13 +57,13 @@
                                     </tr>
                                 @endforeach
                             </tbody>
-                            
+
                         </table>
                     </td>
                 </tr>
             @endforeach
-            
+
         </tbody>
-    
+
     </table>
 @endsection
