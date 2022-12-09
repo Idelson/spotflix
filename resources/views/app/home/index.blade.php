@@ -1,7 +1,5 @@
 @extends('app.layouts.basico')
 
-@section('titulo', 'Home')
-
 @section('conteudo')
 
 <div id='corpo-home'>
@@ -21,9 +19,24 @@
 
     </div>
 
-    <div class="card-film">
-        <table border='1' width='100%'>
+    <div class="title-page"> Minhas listas</div>
 
+    <div class="grid">
+        @foreach ($listas as $lista)
+        <a href="{{ route('lista.show', ['lista' => $lista->id]) }}">
+        <div class="card-film">
+            @if ($lista->imagem)
+            <img src='/img/img-padrao.png' alt='' class="img">
+            @endif
+
+            <p class="nome-lista">{{ $lista->nome }}</p>
+        </div>
+        </a>
+        @endforeach
+    </div>
+
+    <!--<div>
+        <table border='1' width='100%'>
             <thead>
                 <tr>
                     <th>Imagem</th>
@@ -32,17 +45,17 @@
                 </tr>
             </thead>
 
-        <tbody>
-            @foreach ($listas as $lista)
-            <tr>
-                <td>
-                    @if ($lista->imagem)
+            <tbody>
+                @foreach ($listas as $lista)
+                <tr>
+                    <td>
+                        @if ($lista->imagem)
                         <img src="{{ url("storage/img/listas/$lista->imagem") }}" alt='' width='30px' height='30px'>
-                    @endif
+                        @endif
 
-                </td>
-                <td>{{ $lista->nome }}</td>
-                <td><a href="{{ route('lista.show', ['lista' => $lista->id]) }}">Visualizar</a></td>
+                    </td>
+                    <td>{{ $lista->nome }}</td>
+                    <td><a href="{{ route('lista.show', ['lista' => $lista->id]) }}">Visualizar</a></td>
 
                     @if ($lista->user_id == $_SESSION['id'] || count($listaUsuarios->where('lista_id',
                     $lista->id)->where('user_id', $_SESSION['id'])) != 0)
@@ -60,7 +73,7 @@
         </table>
 
         <p>timezone_offset_get</p>
-    </div>
+    </div>-->
 
 
 

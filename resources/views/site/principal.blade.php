@@ -15,7 +15,6 @@
                 <div id='texto-btn'>
                 <a id='btn-line' href={{ route('site.cadastro') }}>Novo por aqui? <span id='span'>Cadastre-se</span> </a>
                 <a id='btn'href={{ route('site.login') }}>Entrar</a>
-
                 </div>
 
             </div>

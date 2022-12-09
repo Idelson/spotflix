@@ -32,7 +32,6 @@ body {
     color: #fff;
     text-decoration: underline;
     font-size: 20px;
-
 }
 
 /*--------end-botoes--------*/
@@ -77,7 +76,7 @@ body {
 
 /*--------TELA CADASTRO--------*/
 
-#sub-title{
+#sub-title {
     color: #fff;
     font-weight: bold;
     font-size: 20px;
@@ -112,7 +111,6 @@ input.input_form_login {
     padding-left: 20px;
     font-size: 18px;
 }
-
 
 #form-input {
     display: flex;
@@ -155,7 +153,7 @@ button.bot {
 #total {
     height: 100vh;
     display: flex;
-    background-color: #444444;
+    background-color: #212121;
 }
 #nav {
     width: 333px;
@@ -187,12 +185,58 @@ button.bot {
     text-align: center;
 }*/
 
+.grid {
+    margin-left: 27px;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 400px 400px 400px 400px;
+    justify-content: start;
+    justify-items: start;
+}
+
+a{
+    text-decoration: none;
+}
+
+.title-page {
+    font-size: 22px;
+    font-weight: bold;
+    color: #fff;
+    margin-top: 28px;
+    margin-left: 30px;
+}
+
+
+.card-film {
+    height: 100px;
+    background-color: #444444;
+    width: 300px;
+    border-radius: 20px;
+    margin: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+}
+
+
+.nome-lista{
+    margin-left: 20px;
+    font-size: 16px;
+    font-weight: 900;
+    color: #fff;
+}
+
+.img{
+    height: 100px;
+    border-radius: 20px 0px 0px 20px;
+}
+
 #div-resultados {
     width: 100%;
     height: 74.5%;
     /*background-color: rgb(239, 195, 137);*/
 }
-
 
 /*--------nav menu--------*/
 
@@ -202,7 +246,6 @@ button.bot {
     font-weight: 900;
     margin-bottom: 30px;
     margin-top: 30px;
-
 }
 .icone-meu {
     color: #fff;
@@ -212,10 +255,9 @@ button.bot {
     justify-content: flex-start;
     flex-wrap: nowrap;
     margin-bottom: 15px;
-
 }
 
-.icone-meu:hover{
+.icone-meu:hover {
     color: #fc4552;
 }
 .menu {
@@ -227,14 +269,14 @@ button.bot {
     text-decoration: none;
 }
 
-.link-menu:hover{
+.link-menu:hover {
     color: #fc4552;
 }
 /*-------Fim da estrutura principal--------*/
 
 /*--------Início da Página Home---------*/
 #pesquisa-lista {
-    background: #7FA372;
+    background: #7fa372;
     height: 200px;
     display: flex;
     flex-direction: row;
@@ -247,7 +289,7 @@ button.bot {
     border: none;
     background-color: #fff;
     cursor: pointer;
-    border-radius:20px;
+    border-radius: 20px;
     margin-left: -37px;
 }
 
@@ -283,13 +325,13 @@ h1 {
 }
 td {
     border: 1px solid black;
-    color:white;
+    color: white;
 }
-th{
-    color:white;
+th {
+    color: white;
 }
-a{
-    color:rgb(184, 181, 181);
+a {
+    color: rgb(184, 181, 181);
 }
 .dados {
     text-align: center;
